@@ -1,0 +1,34 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export default function HeroBanner() {
+  return (
+    <section className="relative w-full h-[500px] bg-gray-900">
+      {/* Background Image Placeholder */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="w-full h-full bg-blue-900 opacity-60 absolute z-10"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
+          alt="Maritime Shipping" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase tracking-wider">
+          Vận tải biển Imoses
+        </h1>
+        <p className="text-lg md:text-xl mb-8 max-w-2xl">
+          Công ty TNHH DV Hàng Hải & Vận Tải Biển IMOSES - Uy tín, chất lượng, chuyên nghiệp.
+        </p>
+        <Link 
+          href="/lien-he" 
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition-colors"
+        >
+          Liên hệ ngay
+        </Link>
+      </div>
+    </section>
+  );
+}

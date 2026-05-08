@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-html-content {
+  @apply text-gray-800 text-lg leading-relaxed;
+}
+
+.custom-html-content p {
+  @apply mb-4;
+}
+
+.custom-html-content img {
+  @apply rounded-xl my-8 max-w-full h-auto;
+}
+
+.custom-html-content h1, 
+.custom-html-content h2, 
+.custom-html-content h3 {
+  @apply font-bold text-gray-900 mt-8 mb-4;
+}
+
+.custom-html-content h2 {
+  @apply text-2xl;
+}
+
+.custom-html-content h3 {
+  @apply text-xl;
+}
+
+.custom-html-content ul {
+  @apply list-disc pl-6 mb-4 space-y-2;
+}
+
+.custom-html-content ol {
+  @apply list-decimal pl-6 mb-4 space-y-2;
+}
+
+.custom-html-content a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
