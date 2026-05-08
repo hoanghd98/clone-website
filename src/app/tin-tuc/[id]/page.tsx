@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { Calendar, ArrowLeft } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const news = await prisma.news.findUnique({
     where: { id: parseInt(params.id) }

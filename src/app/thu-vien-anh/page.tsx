@@ -6,6 +6,8 @@ export const metadata = {
   description: "Hình ảnh hoạt động và dự án của IMOSES",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function GalleryPage() {
   const images = await prisma.gallery.findMany({
     orderBy: {

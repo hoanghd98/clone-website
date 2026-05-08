@@ -8,6 +8,8 @@ export const metadata = {
   description: "Tin tức và sự kiện mới nhất từ IMOSES",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function NewsPage() {
   const news = await prisma.news.findMany({
     orderBy: {
