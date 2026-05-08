@@ -7,3 +7,6 @@
 - Created the `.github/workflows` directory.
 - Added `deploy.yml` workflow to trigger a GitHub Actions job on merges to the `master` branch. The job checks out the code and runs `docker compose up -d --build` to deploy the application.
 - Updated `IMPLEMENTATION_STEPS.md` to insert this deployment and CI/CD step as Step 7, and shifted the final testing step to Step 8.
+
+## Notes & Troubleshooting
+- **GitHub Actions Build Error (`P2021: The table main.News does not exist`)**: During `next build` on GitHub Actions, Next.js attempts static page generation (SSG) for pages like `/` and `/tin-tuc`. Because the SQLite DB isn't seeded/mounted with tables during the CI build step, Prisma crashes. Fixed by adding `export const dynamic = 'force-dynamic';` to the affected pages and API routes, which forces server-side rendering (SSR) and defers the database query to runtime inside the Docker container.
