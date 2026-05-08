@@ -39,7 +39,12 @@
 - Build Gallery Management: UI and APIs to Upload and Delete images.
 - Build Contact Messages View: A simple table to read messages submitted by customers.
 
-## Step 7: Testing & Go-Live (Deployment)
+## Step 7: Containerization and CI/CD Pipeline
+- Add `infrastructure/Dockerfile` for multi-stage Docker build.
+- Add `infrastructure/docker-compose.yml` to define the web service and mount volumes for SQLite database and uploads.
+- Add GitHub Actions workflow (`.github/workflows/deploy.yml`) to automatically build and run the Docker Compose setup when code is merged to the master branch.
+
+## Step 8: Testing & Go-Live
 - Test responsive design (ensure it looks good on mobile and desktop).
 - Seed the database with initial content from the original imoses.com.vn website.
-- Deploy the application to a basic VPS using PM2 or Docker.
+- Verify the deployed application on the VPS.
