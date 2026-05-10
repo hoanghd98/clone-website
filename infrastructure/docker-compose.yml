@@ -10,8 +10,12 @@ services:
       - "3000:3000"
     volumes:
       # Mount the sqlite db and uploads directory to persist data
-      - ../prisma/dev.db:/app/prisma/dev.db
+      - database:/app/prisma
       - ../public/uploads:/app/public/uploads
-    environment:
-      - NODE_ENV=production
+    # environment:
+      # NODE_ENV: production
+    command: npm run dev
     restart: unless-stopped
+
+volumes:
+  database:

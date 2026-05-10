@@ -1,0 +1,2 @@
+run with env production will ignore tailwind config ?
+file db.dev was delete because mount in docker compose override total files.
