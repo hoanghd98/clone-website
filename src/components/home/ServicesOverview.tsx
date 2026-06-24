@@ -1,42 +1,35 @@
 import Link from "next/link";
 import { 
-  Anchor, 
-  Settings, 
-  Ship, 
-  Warehouse, 
-  Hammer 
+  Wrench, 
+  Package, 
+  Utensils, 
+  Users 
 } from "lucide-react";
 
 const services = [
   {
-    title: "Lai dắt & cứu hộ hàng hải",
-    description: "Cẩu nổi cùng các trang thiết bị cần thiết luôn sẵn sàng 24/24 để lai dắt, cứu hộ cho các phương tiện đi biển.",
-    icon: Anchor,
-    link: "/dich-vu#lai-dat",
+    title: "DỊCH VỤ SỬA CHỮA – BẢO DƯỠNG THIẾT BỊ",
+    description: "Bảo dưỡng, sửa chữa các thiết bị điện – điện tử, máy móc cho các tàu thuyền và các công trình dầu khí",
+    icon: Wrench,
+    link: "/dich-vu#sua-chua",
   },
   {
-    title: "Sản xuất các thiết bị tàu thủy",
-    description: "Sửa chữa thiết bị điện tàu thủy, sửa chữa - lắp đặt thiết bị thủy. Bán buôn máy móc thiết bị, phụ tùng.",
-    icon: Settings,
-    link: "/dich-vu#san-xuat",
+    title: "CUNG ỨNG VẬT TƯ, THIẾT BỊ HÀNG HẢI",
+    description: "Vật tư, thiết bị, sơn, dầu nhờn, cáp vải vv... cho các giàn khoan dầu khí cũng như đội tàu làm việc trong – ngoài nước.",
+    icon: Package,
+    link: "/dich-vu#vat-tu",
   },
   {
-    title: "Vận tải hàng hóa bằng đường thủy",
-    description: "Với hàng trăm đối tác trên toàn thế giới đảm bảo dịch vụ nhanh nhất, giá cạnh tranh, chất luợng tuyệt đối.",
-    icon: Ship,
-    link: "/dich-vu#van-tai",
+    title: "CUNG CẤP THỰC PHẨM SẠCH",
+    description: "Rau củ – Trái cây – Gia cầm – Hải sản – Thức ăn",
+    icon: Utensils,
+    link: "/dich-vu#thuc-pham",
   },
   {
-    title: "Kho bãi và lưu trữ hàng hóa",
-    description: "Kho lưu trữ lớn, đáp ứng đủ nhu cầu và đội ngũ quản lý và quy trình sắp xếp kho bãi chuyên nghiệp.",
-    icon: Warehouse,
-    link: "/dich-vu#kho-bai",
-  },
-  {
-    title: "Đóng tàu và kết cấu nổi",
-    description: "Đóng mới, sửa chữa các loại tàu sông, biển và phương tiện nổi. Chế tạo sửa chữa các kết cấu thép trên phương tiện thủy.",
-    icon: Hammer,
-    link: "/dich-vu#dong-tau",
+    title: "DỊCH VỤ HỖ TRỢ THUYỀN VIÊN",
+    description: "Hỗ trợ thuyền viên các loại chứng chỉ thuyền viên, working visa cho thuyền viên/ đối tác",
+    icon: Users,
+    link: "/dich-vu#ho-tro",
   }
 ];
 
