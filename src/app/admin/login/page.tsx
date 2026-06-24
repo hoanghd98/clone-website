@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
         <div className="flex justify-center mb-8">
           <Image
             src="/images/logo.png"
-            alt="IMOSES Logo"
+            alt="NAM PHUONG Logo"
             width={200}
             height={60}
             className="h-12 w-auto"

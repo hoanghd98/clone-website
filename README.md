@@ -1,4 +1,4 @@
-# IMOSES Clone
+# NAM PHUONG Clone
 
 This is a Next.js project with Tailwind CSS and Prisma (SQLite).
 

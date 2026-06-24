@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "Giới thiệu | IMOSES",
-  description: "Giới thiệu về Công ty TNHH DV Hàng Hải & Vận Tải Biển IMOSES",
+  title: "Giới thiệu | NAM PHUONG",
+  description: "Giới thiệu về Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG",
 };
 
 export default function AboutPage() {
@@ -14,14 +14,14 @@ export default function AboutPage() {
           <div className="relative h-64 bg-blue-900 flex items-center justify-center">
             <div className="absolute inset-0 opacity-20">
               <Image
-                src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2073&auto=format&fit=crop"
-                alt="Giới thiệu IMOSES"
+                src="/upload/bg-home.png"
+                alt="Giới thiệu NAM PHUONG"
                 fill
                 className="object-cover"
               />
             </div>
             <h1 className="relative z-10 text-4xl font-bold text-white text-center">
-              Giới thiệu về IMOSES
+              Giới thiệu về NAM PHUONG
             </h1>
           </div>
 
@@ -29,30 +29,31 @@ export default function AboutPage() {
           <div className="p-8 md:p-12">
             <div className="prose prose-lg max-w-none text-gray-700">
               <h2 className="text-2xl font-bold text-blue-900 mb-6">
-                Công ty TNHH DV Hàng Hải & Vận Tải Biển IMOSES
+                CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ PHÁT TRIỂN KỸ THUẬT NAM PHƯƠNG
               </h2>
               
               <p className="mb-6 leading-relaxed">
-                Công ty được thành lập từ các thành viên có nhiều kinh nghiệm trong sửa chữa và đóng mới của Công ty TNHH MTV Đóng tàu và Công nghiệp Hàng hải Sài Gòn và Công nghiệp tàu thủy Sài Gòn nên có bề dày kinh nghiệm trong lĩnh vực đóng mới và sửa chữa tàu biển, tàu dịch vụ dầu khí, kết cấu giàn khoan.
+                CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ PHÁT TRIỂN KỸ THUẬT NAM PHƯƠNG với lĩnh vực 
+                chính sửa chữa tàu biển, cung cấp thực phẩm, vật tư thiết bị hàng hải, dầu khí với đội ngũ nhân 
+                viên chuyên môn cao và tận tâm với khách hàng. Với triết lý kinh doanh trên, chúng tôi thi công 
+                các dự án chất lượng cao và giải pháp tiên tiến trong ngành hàng hải.
               </p>
 
-              <p className="mb-6 leading-relaxed">
-                Với trên 10 năm kinh nghiệm thi công cùng đội ngũ kỹ thuật, công nhân lành nghề được đào tạo bài bản theo tiêu chuẩn <strong>ISO: 9001 – 2008</strong>, chúng tôi sẽ đáp ứng đầy đủ mọi yều cầu của khách hàng và làm hài lòng với tất cả những khách hàng khó tính nhất.
-              </p>
-
-              <div className="mt-10 grid md:grid-cols-3 gap-6 text-center">
-                <div className="p-6 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
-                  <div className="text-gray-600 font-medium">Năm kinh nghiệm</div>
-                </div>
-                <div className="p-6 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">ISO</div>
-                  <div className="text-gray-600 font-medium">9001 - 2008</div>
-                </div>
-                <div className="p-6 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">100%</div>
-                  <div className="text-gray-600 font-medium">Khách hàng hài lòng</div>
-                </div>
+              <div className="mt-8 bg-gray-50 p-6 rounded-lg border border-gray-100">
+                <ul className="space-y-4">
+                  <li className="flex flex-col md:flex-row md:items-start">
+                    <span className="font-semibold text-blue-900 md:w-1/4">Tên công ty:</span>
+                    <span className="text-gray-700 md:w-3/4">CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ PHÁT TRIỂN KỸ THUẬT NAM PHƯƠNG</span>
+                  </li>
+                  <li className="flex flex-col md:flex-row md:items-start">
+                    <span className="font-semibold text-blue-900 md:w-1/4">Tên quốc tế:</span>
+                    <span className="text-gray-700 md:w-3/4">NAM PHUONG TECHNICAL DEVELOPMENT SERVICES TRADING COMPANY LIMITED</span>
+                  </li>
+                  <li className="flex flex-col md:flex-row md:items-start">
+                    <span className="font-semibold text-blue-900 md:w-1/4">Mã số thuế:</span>
+                    <span className="text-gray-700 md:w-3/4 font-mono">3502518665</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

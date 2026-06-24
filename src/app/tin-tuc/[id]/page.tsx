@@ -13,12 +13,12 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   if (!news) {
     return {
-      title: "Không tìm thấy bài viết | IMOSES"
+      title: "Không tìm thấy bài viết | NAM PHUONG"
     };
   }
 
   return {
-    title: `${news.title} | IMOSES`,
+    title: `${news.title} | NAM PHUONG`,
     description: news.content.substring(0, 160).replace(/<[^>]*>?/gm, ''),
   };
 }

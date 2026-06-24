@@ -8,8 +8,8 @@ export default function HeroBanner() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="w-full h-full bg-blue-900 opacity-60 absolute z-10"></div>
         <img 
-          src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
-          alt="Maritime Shipping" 
+          src="/upload/bg-home.png" 
+          alt="Nam Phuong Background" 
           className="w-full h-full object-cover"
         />
       </div>
@@ -17,10 +17,10 @@ export default function HeroBanner() {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase tracking-wider">
-          Vận tải biển Imoses
+          Vận tải biển Nam Phuong
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl">
-          Công ty TNHH DV Hàng Hải & Vận Tải Biển IMOSES - Uy tín, chất lượng, chuyên nghiệp.
+          Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG - Uy tín, chất lượng, chuyên nghiệp.
         </p>
         <Link 
           href="/lien-he" 

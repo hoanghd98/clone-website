@@ -19,7 +19,7 @@
    - Implemented a fallback UI for when no news is available.
 
 5. **Partner Logos Component (`src/components/home/PartnerLogos.tsx`)**:
-   - Extracted actual partner logo URLs from the original IMOSES website.
+   - Extracted actual partner logo URLs from the original NAM PHUONG website.
    - Converted the component into a Client Component (`"use client"`) to implement an interactive carousel.
    - Added auto-scrolling functionality (moves left every 2 seconds).
    - Implemented responsive design to show 1 to 4 logos depending on screen width.

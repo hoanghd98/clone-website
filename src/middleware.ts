@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
     const token = request.cookies.get('admin_token')?.value;
     
     // Simple hardcoded token check
-    if (token !== 'imoses_admin_secret') {
+    if (token !== 'namphuong_admin_secret') {
       return NextResponse.redirect(new URL('/admin/login', request.url));
     }
   }

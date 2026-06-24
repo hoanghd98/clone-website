@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
     // Hardcoded password for simplicity as requested
     if (password === 'admin123') {
-      cookies().set('admin_token', 'imoses_admin_secret', {
+      cookies().set('admin_token', 'namphuong_admin_secret', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',

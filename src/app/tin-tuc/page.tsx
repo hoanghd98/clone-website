@@ -4,8 +4,8 @@ import prisma from "@/lib/prisma";
 import { Calendar } from "lucide-react";
 
 export const metadata = {
-  title: "Tin tức | IMOSES",
-  description: "Tin tức và sự kiện mới nhất từ IMOSES",
+  title: "Tin tức | NAM PHUONG",
+  description: "Tin tức và sự kiện mới nhất từ NAM PHUONG",
 };
 
 export const dynamic = 'force-dynamic';
@@ -23,7 +23,7 @@ export default async function NewsPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-blue-900 mb-4">Tin tức & Sự kiện</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Cập nhật những thông tin mới nhất về hoạt động của IMOSES và ngành hàng hải.
+            Cập nhật những thông tin mới nhất về hoạt động của NAM PHUONG và ngành hàng hải.
           </p>
         </div>
 

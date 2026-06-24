@@ -1,4 +1,4 @@
-# Implementation Plan: IMOSES Clone (Next.js + SQLite)
+# Implementation Plan: NAM PHUONG Clone (Next.js + SQLite)
 
 ## Step 1: Setup Core FE + BE + DB
 - Initialize the Next.js project with Tailwind CSS.
@@ -46,5 +46,5 @@
 
 ## Step 8: Testing & Go-Live
 - Test responsive design (ensure it looks good on mobile and desktop).
-- Seed the database with initial content from the original imoses.com.vn website.
+- Seed the database with initial content from the original namphuong.com.vn website.
 - Verify the deployed application on the VPS.

@@ -41,7 +41,7 @@ export default function AdminLayout({
       {/* Sidebar */}
       <div className="w-64 bg-white shadow-md flex flex-col">
         <div className="h-16 flex items-center justify-center border-b">
-          <h1 className="text-xl font-bold text-blue-600">IMOSES Admin</h1>
+          <h1 className="text-xl font-bold text-blue-600">NAM PHUONG Admin</h1>
         </div>
         
         <nav className="flex-1 p-4 space-y-1">

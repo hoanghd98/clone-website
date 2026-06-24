@@ -2,8 +2,8 @@ import Image from "next/image";
 import prisma from "@/lib/prisma";
 
 export const metadata = {
-  title: "Thư viện ảnh | IMOSES",
-  description: "Hình ảnh hoạt động và dự án của IMOSES",
+  title: "Thư viện ảnh | NAM PHUONG",
+  description: "Hình ảnh hoạt động và dự án của NAM PHUONG",
 };
 
 export const dynamic = 'force-dynamic';
@@ -21,7 +21,7 @@ export default async function GalleryPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-blue-900 mb-4">Thư viện ảnh</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà IMOSES đã thực hiện.
+            Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà NAM PHUONG đã thực hiện.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export default async function GalleryPage() {
               >
                 <Image
                   src={img.image_url}
-                  alt={img.caption || "Hình ảnh IMOSES"}
+                  alt={img.caption || "Hình ảnh NAM PHUONG"}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />

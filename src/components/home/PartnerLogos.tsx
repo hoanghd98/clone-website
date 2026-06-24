@@ -4,17 +4,11 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const partnerLogos = [
-  "http://imoses.com.vn/images/partner/2021logo-2.jpg",
-  "http://imoses.com.vn/images/partner/8075logo-12.jpg",
-  "http://imoses.com.vn/images/partner/7678logo-13.jpg",
-  "http://imoses.com.vn/images/partner/6502logo-14.jpg",
-  "http://imoses.com.vn/images/partner/6139logo-15.jpg",
-  "http://imoses.com.vn/images/partner/3619LOgo.%20GSRMS.jpg",
-  "http://imoses.com.vn/images/partner/3499logo-20.jpg",
-  "http://imoses.com.vn/images/partner/2188logo-18.jpg",
-  "http://imoses.com.vn/images/partner/4699logo-19.jpg",
-  "http://imoses.com.vn/images/partner/3217logo-16.jpg",
-  "http://imoses.com.vn/images/partner/6365logo-11.jpg",
+  "/upload/partners/partner1.png",
+  "/upload/partners/partner2.png",
+  "/upload/partners/partner3.png",
+  "/upload/partners/partner4.png",
+  "/upload/partners/partner5.png",
 ];
 
 export default function PartnerLogos() {

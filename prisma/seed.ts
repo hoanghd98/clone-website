@@ -15,7 +15,7 @@ const newsData = [
   },
   {
     title: "Ký kết hợp đồng đóng mới tàu chở hàng rời 50.000 DWT",
-    content: "IMOSES đã ký kết thành công hợp đồng đóng mới tàu chở hàng rời 50.000 DWT cho một đối tác quốc tế lớn. Quá trình thi công sẽ được bắt đầu vào tháng tới tại xưởng đóng tàu chính của chúng tôi.",
+    content: "NAM PHUONG đã ký kết thành công hợp đồng đóng mới tàu chở hàng rời 50.000 DWT cho một đối tác quốc tế lớn. Quá trình thi công sẽ được bắt đầu vào tháng tới tại xưởng đóng tàu chính của chúng tôi.",
     image_url: "https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -40,7 +40,7 @@ const newsData = [
   },
   {
     title: "Hợp tác với mạng lưới logistics toàn cầu",
-    content: "IMOSES đã chính thức hợp tác với một mạng lưới logistics hàng đầu toàn cầu để cung cấp các giải pháp vận chuyển trọn gói (door-to-door) cho khách hàng quốc tế của chúng tôi.",
+    content: "NAM PHUONG đã chính thức hợp tác với một mạng lưới logistics hàng đầu toàn cầu để cung cấp các giải pháp vận chuyển trọn gói (door-to-door) cho khách hàng quốc tế của chúng tôi.",
     image_url: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -70,7 +70,7 @@ const galleryData = [
 
 const contactData = [
   { name: "Nguyễn Văn A", email: "nguyenvana@example.com", phone: "0901234567", message: "Tôi muốn tìm hiểu về cước phí vận chuyển hàng hóa sang Châu Âu." },
-  { name: "Trần Thị B", email: "tranthib@example.com", phone: "0912345678", message: "Công ty có cung cấp dịch vụ lưu kho cho hóa chất độc hại không?" },
+  { name: "Trần Thị B", email: "tranthib@example.com", phone: "0865302279", message: "Công ty có cung cấp dịch vụ lưu kho cho hóa chất độc hại không?" },
   { name: "Lê Văn C", email: "levanc@logistics.com", phone: "0923456789", message: "Quan tâm đến việc hợp tác vận tải container nội địa." },
   { name: "Phạm Thị D", email: "phamthid@shipping.net", phone: "0934567890", message: "Chúng tôi cần dịch vụ sửa chữa khẩn cấp hệ thống điện của tàu." },
   { name: "Hoàng Văn E", email: "hoangvane@marine.org", phone: "0945678901", message: "Yêu cầu báo giá dịch vụ lai dắt trên Biển Đông." },

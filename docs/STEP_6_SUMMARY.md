@@ -32,7 +32,7 @@
 
 ## Important Notes & Considerations:
 
-- **Hardcoded Credentials**: The admin password is currently hardcoded as `admin123` in `src/app/api/admin/login/route.ts`. The authentication token is also a simple string (`imoses_admin_secret`). This was done to keep the implementation fast and simple as requested, but for a real production environment, you should move these to environment variables (`.env`).
+- **Hardcoded Credentials**: The admin password is currently hardcoded as `admin123` in `src/app/api/admin/login/route.ts`. The authentication token is also a simple string (`namphuong_admin_secret`). This was done to keep the implementation fast and simple as requested, but for a real production environment, you should move these to environment variables (`.env`).
 - **Local Image Storage**: Images are uploaded directly to the local file system (`public/uploads`). If you deploy this to a serverless platform like Vercel, local files will be lost on redeploy. For a VPS/Docker deployment (as mentioned in Step 7), this is fine as long as you map a persistent volume to the `public/uploads` folder.
 - **Icons Library**: I used `lucide-react` for the admin icons instead of `@heroicons/react` because `lucide-react` was already installed in your `package.json`, avoiding the need to install additional dependencies.
 
