@@ -42,7 +42,7 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">Dịch vụ của chúng tôi</h1>
+          <h1 className="text-4xl font-bold text-primary-dark mb-4">Dịch vụ của chúng tôi</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             NAM PHUONG cung cấp đa dạng các dịch vụ trong lĩnh vực hàng hải, vận tải biển, đóng tàu và logistics với chất lượng hàng đầu.
           </p>
@@ -66,9 +66,9 @@ export default function ServicesPage() {
                 />
               </div>
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold text-blue-900 mb-4">{service.title}</h2>
+                <h2 className="text-2xl font-bold text-primary-dark mb-4">{service.title}</h2>
                 <div className="mb-6 space-y-4">
-                  <p className="text-blue-800 font-medium italic">
+                  <p className="text-primary-dark font-medium italic">
                     {service.summary}
                   </p>
                   <p className="text-gray-600 leading-relaxed text-justify">

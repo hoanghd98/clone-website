@@ -6,7 +6,7 @@ export default function HeroBanner() {
     <section className="relative w-full h-[500px] bg-gray-900">
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="w-full h-full bg-blue-900 opacity-60 absolute z-10"></div>
+        <div className="w-full h-full bg-primary opacity-60 absolute z-10"></div>
         <img 
           src="/images/bg-home.png"
           alt="Nam Phuong Background" 

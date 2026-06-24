@@ -19,7 +19,7 @@ export default async function GalleryPage() {
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">Thư viện ảnh</h1>
+          <h1 className="text-4xl font-bold text-primary-dark mb-4">Thư viện ảnh</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà NAM PHUONG đã thực hiện.
           </p>

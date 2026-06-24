@@ -56,14 +56,14 @@ export default function AdminContactsPage() {
                   <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                     <div className="flex items-center gap-1.5">
                       <Mail className="w-4 h-4 text-gray-400" />
-                      <a href={`mailto:${contact.email}`} className="hover:text-blue-600">
+                      <a href={`mailto:${contact.email}`} className="hover:text-primary-dark">
                         {contact.email}
                       </a>
                     </div>
                     {contact.phone && (
                       <div className="flex items-center gap-1.5">
                         <Phone className="w-4 h-4 text-gray-400" />
-                        <a href={`tel:${contact.phone}`} className="hover:text-blue-600">
+                        <a href={`tel:${contact.phone}`} className="hover:text-primary-dark">
                           {contact.phone}
                         </a>
                       </div>

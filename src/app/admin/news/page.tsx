@@ -116,7 +116,7 @@ export default function AdminNewsPage() {
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <Link
                     href={`/admin/news/${item.id}`}
-                    className="text-blue-600 hover:text-blue-900 mr-4 inline-flex items-center gap-1"
+                    className="text-primary-dark hover:text-primary-dark mr-4 inline-flex items-center gap-1"
                   >
                     <Pencil className="w-4 h-4" /> Sửa
                   </Link>

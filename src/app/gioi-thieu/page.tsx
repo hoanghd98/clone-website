@@ -11,7 +11,7 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
           {/* Header Banner */}
-          <div className="relative h-64 bg-blue-900 flex items-center justify-center">
+          <div className="relative h-64 bg-primary flex items-center justify-center">
             <div className="absolute inset-0 opacity-20">
               <Image
                 src="/images/bg-home.png"
@@ -20,7 +20,7 @@ export default function AboutPage() {
                 className="object-cover"
               />
             </div>
-            <h1 className="relative z-10 text-4xl font-bold text-white text-center">
+            <h1 className="relative z-10 text-4xl font-bold text-primary-content text-center">
               Giới thiệu về NAM PHUONG
             </h1>
           </div>
@@ -28,7 +28,7 @@ export default function AboutPage() {
           {/* Content */}
           <div className="p-8 md:p-12">
             <div className="prose prose-lg max-w-none text-gray-700">
-              <h2 className="text-2xl font-bold text-blue-900 mb-6">
+              <h2 className="text-2xl font-bold text-primary-dark mb-6">
                 CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ PHÁT TRIỂN KỸ THUẬT NAM PHƯƠNG
               </h2>
               
@@ -42,15 +42,15 @@ export default function AboutPage() {
               <div className="mt-8 bg-gray-50 p-6 rounded-lg border border-gray-100">
                 <ul className="space-y-4">
                   <li className="flex flex-col md:flex-row md:items-start">
-                    <span className="font-semibold text-blue-900 md:w-1/4">Tên công ty:</span>
+                    <span className="font-semibold text-primary-dark md:w-1/4">Tên công ty:</span>
                     <span className="text-gray-700 md:w-3/4">CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ PHÁT TRIỂN KỸ THUẬT NAM PHƯƠNG</span>
                   </li>
                   <li className="flex flex-col md:flex-row md:items-start">
-                    <span className="font-semibold text-blue-900 md:w-1/4">Tên quốc tế:</span>
+                    <span className="font-semibold text-primary-dark md:w-1/4">Tên quốc tế:</span>
                     <span className="text-gray-700 md:w-3/4">NAM PHUONG TECHNICAL DEVELOPMENT SERVICES TRADING COMPANY LIMITED</span>
                   </li>
                   <li className="flex flex-col md:flex-row md:items-start">
-                    <span className="font-semibold text-blue-900 md:w-1/4">Mã số thuế:</span>
+                    <span className="font-semibold text-primary-dark md:w-1/4">Mã số thuế:</span>
                     <span className="text-gray-700 md:w-3/4 font-mono">3502518665</span>
                   </li>
                 </ul>

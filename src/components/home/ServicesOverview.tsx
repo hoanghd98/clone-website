@@ -50,14 +50,14 @@ export default function ServicesOverview() {
                 key={index} 
                 className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-blue-100 text-primary-dark rounded-full flex items-center justify-center mb-6">
                   <Icon size={32} />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-800">{service.title}</h3>
                 <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
                 <Link 
                   href={service.link}
-                  className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center transition-colors"
+                  className="text-primary-dark hover:text-primary-dark font-medium inline-flex items-center transition-colors"
                 >
                   Xem thêm
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

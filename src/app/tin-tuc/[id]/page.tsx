@@ -43,7 +43,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
       <div className="container mx-auto px-4 max-w-4xl">
         <Link 
           href="/tin-tuc" 
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 transition-colors"
+          className="inline-flex items-center text-primary-dark hover:text-primary-dark mb-8 transition-colors"
         >
           <ArrowLeft size={20} className="mr-2" />
           Quay lại danh sách tin tức

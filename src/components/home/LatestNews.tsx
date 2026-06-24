@@ -19,7 +19,7 @@ export default async function LatestNews() {
             <h2 className="text-3xl font-bold text-gray-800 uppercase mb-2">Tin tức & Sự kiện</h2>
             <div className="w-24 h-1 bg-blue-600"></div>
           </div>
-          <Link href="/tin-tuc" className="text-blue-600 hover:text-blue-800 font-medium hidden sm:block">
+          <Link href="/tin-tuc" className="text-primary-dark hover:text-primary-dark font-medium hidden sm:block">
             Xem tất cả &rarr;
           </Link>
         </div>
@@ -45,7 +45,7 @@ export default async function LatestNews() {
                   <div className="text-xs text-gray-500 mb-2">
                     {new Date(news.created_at).toLocaleDateString('vi-VN')}
                   </div>
-                  <h3 className="text-lg font-bold mb-3 text-gray-800 line-clamp-2 hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-bold mb-3 text-gray-800 line-clamp-2 hover:text-primary-dark transition-colors">
                     <Link href={`/tin-tuc/${news.id}`}>
                       {news.title}
                     </Link>
@@ -55,7 +55,7 @@ export default async function LatestNews() {
                   </p>
                   <Link 
                     href={`/tin-tuc/${news.id}`}
-                    className="text-blue-600 hover:text-blue-800 text-sm font-medium mt-auto"
+                    className="text-primary-dark hover:text-primary-dark text-sm font-medium mt-auto"
                   >
                     Đọc tiếp &rarr;
                   </Link>
@@ -70,7 +70,7 @@ export default async function LatestNews() {
         )}
         
         <div className="mt-8 text-center sm:hidden">
-          <Link href="/tin-tuc" className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium py-2 px-6 rounded transition-colors">
+          <Link href="/tin-tuc" className="inline-block border border-blue-600 text-primary-dark hover:bg-blue-600 hover:text-white font-medium py-2 px-6 rounded transition-colors">
             Xem tất cả tin tức
           </Link>
         </div>

@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       {/* Top Bar - Hotline & Email */}
-      <div className="bg-blue-900 text-white py-2 text-sm">
+      <div className="bg-primary text-primary-content py-2 text-sm">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="hidden md:flex space-x-4">
             <span className="flex items-center">
@@ -51,7 +51,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button 
-              className="text-blue-900 focus:outline-none"
+              className="text-primary-dark focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -72,7 +72,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition duration-200"
+                className="text-gray-700 hover:text-primary-dark font-medium transition duration-200"
               >
                 {item.name}
               </Link>
@@ -89,7 +89,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition duration-200 block py-2 px-2 rounded-md"
+                className="text-gray-700 hover:text-primary-dark hover:bg-gray-50 font-medium transition duration-200 block py-2 px-2 rounded-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

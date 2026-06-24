@@ -122,7 +122,7 @@ export default function ImageUpload({ value, onChange, className = '' }: ImageUp
         
         {isUploading && (
           <div className="absolute inset-0 bg-white/80 z-10 flex flex-col items-center justify-center">
-            <Loader2 className="w-8 h-8 text-blue-600 animate-spin mb-2" />
+            <Loader2 className="w-8 h-8 text-primary-dark animate-spin mb-2" />
             <span className="text-sm text-gray-600 font-medium">Đang tải ảnh...</span>
           </div>
         )}
@@ -163,7 +163,7 @@ export default function ImageUpload({ value, onChange, className = '' }: ImageUp
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="relative cursor-pointer bg-white px-3 py-1.5 border border-gray-300 rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500 shadow-sm"
+                  className="relative cursor-pointer bg-white px-3 py-1.5 border border-gray-300 rounded-md font-medium text-primary-dark hover:text-primary-dark focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500 shadow-sm"
                 >
                   <span className="flex items-center gap-1">
                     <Upload className="w-4 h-4" /> Tải ảnh lên
@@ -173,7 +173,7 @@ export default function ImageUpload({ value, onChange, className = '' }: ImageUp
                 <button
                   type="button"
                   onClick={() => setShowUrlInput(!showUrlInput)}
-                  className="relative cursor-pointer bg-white px-3 py-1.5 border border-gray-300 rounded-md font-medium text-blue-600 hover:text-blue-500 shadow-sm"
+                  className="relative cursor-pointer bg-white px-3 py-1.5 border border-gray-300 rounded-md font-medium text-primary-dark hover:text-primary-dark shadow-sm"
                 >
                   <span className="flex items-center gap-1">
                     <LinkIcon className="w-4 h-4" /> Dùng link (URL)

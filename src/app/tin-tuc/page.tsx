@@ -21,7 +21,7 @@ export default async function NewsPage() {
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">Tin tức & Sự kiện</h1>
+          <h1 className="text-4xl font-bold text-primary-dark mb-4">Tin tức & Sự kiện</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Cập nhật những thông tin mới nhất về hoạt động của NAM PHUONG và ngành hàng hải.
           </p>
@@ -68,13 +68,13 @@ export default async function NewsPage() {
                       year: 'numeric'
                     }).format(new Date(item.created_at))}
                   </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                  <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-dark transition-colors">
                     {item.title}
                   </h2>
                   <p className="text-gray-600 line-clamp-3 mb-4 flex-grow">
                     {item.content.replace(/<[^>]*>?/gm, '') /* basic HTML strip for preview */}
                   </p>
-                  <span className="text-blue-600 font-medium text-sm mt-auto inline-flex items-center">
+                  <span className="text-primary-dark font-medium text-sm mt-auto inline-flex items-center">
                     Đọc tiếp 
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
