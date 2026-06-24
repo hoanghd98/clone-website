@@ -14,7 +14,7 @@ export default function AboutPage() {
           <div className="relative h-64 bg-blue-900 flex items-center justify-center">
             <div className="absolute inset-0 opacity-20">
               <Image
-                src="/upload/bg-home.png"
+                src="/images/bg-home.png"
                 alt="Giới thiệu NAM PHUONG"
                 fill
                 className="object-cover"

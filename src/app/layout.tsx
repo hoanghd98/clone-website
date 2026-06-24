@@ -4,8 +4,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "NAM PHUONG Clone",
-  description: "Clone of NAM PHUONG website",
+  title: "NAM PHUONG",
+  description: "NAM PHUONG website",
 };
 
 export default function RootLayout({

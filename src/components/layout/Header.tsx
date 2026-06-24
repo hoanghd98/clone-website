@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -40,11 +41,11 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-2 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-3xl font-bold text-blue-900">NAM PHUONG</span>
+            <Image src="/images/logo.jpg" alt="NAM PHUONG Logo" width={200} height={60} className="h-16 w-auto object-contain" priority />
           </Link>
 
           {/* Mobile Menu Button */}

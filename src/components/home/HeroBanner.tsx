@@ -8,7 +8,7 @@ export default function HeroBanner() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="w-full h-full bg-blue-900 opacity-60 absolute z-10"></div>
         <img 
-          src="/upload/bg-home.png" 
+          src="/images/bg-home.png"
           alt="Nam Phuong Background" 
           className="w-full h-full object-cover"
         />

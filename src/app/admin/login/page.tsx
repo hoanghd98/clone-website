@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
         <div className="flex justify-center mb-8">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.jpg"
             alt="NAM PHUONG Logo"
             width={200}
             height={60}

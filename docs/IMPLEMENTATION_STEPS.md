@@ -1,4 +1,4 @@
-# Implementation Plan: NAM PHUONG Clone (Next.js + SQLite)
+# Implementation Plan: NAM PHUONG (Next.js + SQLite)
 
 ## Step 1: Setup Core FE + BE + DB
 - Initialize the Next.js project with Tailwind CSS.
