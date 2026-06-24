@@ -4,68 +4,68 @@ const prisma = new PrismaClient();
 
 const newsData = [
   {
-    title: "Câu lạc bộ P&I London yêu cầu kiểm tra và bảo dưỡng cần cẩu trên boong tàu",
-    content: "Câu lạc bộ P&I London vừa ban hành chỉ thị mới yêu cầu tất cả các tàu thành viên tiến hành kiểm tra kỹ lưỡng và bảo dưỡng cần cẩu trên boong để đảm bảo an toàn hoạt động và ngăn ngừa tai nạn trong quá trình xếp dỡ hàng hóa.",
+    title: "Nam Phương ký kết hợp đồng bảo dưỡng định kỳ thiết bị hàng hải cho đội tàu lớn",
+    content: "Công Ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương vừa ký kết thành công hợp đồng bảo dưỡng định kỳ toàn diện cho một đội tàu chở hàng quốc tế. Hợp đồng bao gồm việc kiểm tra, thay thế linh kiện và vệ sinh các thiết bị điện - điện tử và máy móc, đảm bảo sự vận hành liên tục và an toàn trên các tuyến đường biển khắc nghiệt.",
     image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Đội tàu container Việt Nam đảm nhận các tuyến nội địa",
-    content: "Đội tàu vận tải container Việt Nam hiện đã hoàn toàn đảm nhận các tuyến vận tải nội địa. Đội tàu hiện bao gồm 39 tàu với tổng trọng tải 368.000 DWT, cho thấy sự tăng trưởng đáng kể trong lĩnh vực hàng hải.",
-    image_url: "https://images.unsplash.com/photo-1494412519320-aa3da6e05a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "Mở rộng kho hàng vật tư tàu thủy và thiết bị dầu khí chính hãng",
+    content: "Nhằm đáp ứng nhu cầu ngày càng cao của thị trường, Nam Phương đã chính thức mở rộng hệ thống kho chứa vật tư, thiết bị hàng hải. Kho mới được trang bị hiện đại để bảo quản tốt nhất các sản phẩm từ những thương hiệu hàng đầu như Stauff, Caterpillar, Donaldson, sơn, dầu nhờn và cáp vải.",
+    image_url: "https://images.unsplash.com/photo-1504917595217-d4bf0611a9eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Ký kết hợp đồng đóng mới tàu chở hàng rời 50.000 DWT",
-    content: "NAM PHUONG đã ký kết thành công hợp đồng đóng mới tàu chở hàng rời 50.000 DWT cho một đối tác quốc tế lớn. Quá trình thi công sẽ được bắt đầu vào tháng tới tại xưởng đóng tàu chính của chúng tôi.",
+    title: "Cung cấp lô thực phẩm sạch tươi sống cho tàu quốc tế neo đậu tại Vũng Tàu",
+    content: "Đội ngũ cung ứng của Nam Phương vừa hoàn thành việc giao lô thực phẩm sạch, bao gồm rau củ, trái cây, hải sản và các sản phẩm đông lạnh cho một tàu viễn dương. Tất cả thực phẩm đều được kiểm định nghiêm ngặt theo tiêu chuẩn vệ sinh an toàn, đảm bảo dinh dưỡng cho thủy thủ đoàn trong hành trình dài ngày.",
+    image_url: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Hỗ trợ thành công visa làm việc và gia hạn chứng chỉ cho 50 thuyền viên",
+    content: "Dịch vụ hỗ trợ thuyền viên của Nam Phương tự hào thông báo đã hoàn tất thủ tục xin cấp chứng chỉ chuẩn quốc tế và working visa cho hơn 50 thuyền viên và đối tác nước ngoài trong tháng qua. Dịch vụ nhanh chóng, chuyên nghiệp của chúng tôi giúp tiết kiệm thời gian đáng kể cho khách hàng.",
+    image_url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Nam Phương trở thành đối tác phân phối uy tín của các hãng vật tư lớn",
+    content: "Với cam kết đặt uy tín và chất lượng lên hàng đầu, Nam Phương đã củng cố vị thế là nhà phân phối chính hãng các vật tư tàu thủy và dầu khí. Các thiết bị do chúng tôi cung cấp đáp ứng đầy đủ tiêu chí khắt khe về kỹ thuật, độ bền và an toàn cho các giàn khoan và đội tàu.",
     image_url: "https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Cứu hộ thành công một tàu hàng trên Biển Đông",
-    content: "Đội cứu hộ hàng hải của chúng tôi đã lai dắt thành công một tàu chở hàng gặp nạn đến nơi an toàn trong điều kiện thời tiết khắc nghiệt vào tuần trước. Toàn bộ thủy thủ đoàn đều an toàn và con tàu đang được sửa chữa.",
-    image_url: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "Đội ngũ kỹ thuật viên khắc phục sự cố hệ thống điện khẩn cấp ngoài khơi",
+    content: "Dịch vụ sửa chữa khẩn cấp của Nam Phương đã nhanh chóng được triển khai để khắc phục sự cố hệ thống điện trên một con tàu đang làm nhiệm vụ. Với tay nghề cao và kinh nghiệm nhiều năm, các kỹ thuật viên đã đưa thiết bị hoạt động trở lại trạng thái tốt nhất trong thời gian ngắn.",
+    image_url: "https://images.unsplash.com/photo-1566847416801-165c69b8f2e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Mở rộng hệ thống kho bãi tại cảng chính",
-    content: "Để đáp ứng nhu cầu ngày càng tăng, chúng tôi đang tiến hành mở rộng hệ thống kho bãi lưu trữ thêm 10.000 mét vuông. Cơ sở mới sẽ được trang bị hệ thống kiểm soát khí hậu hiện đại.",
-    image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "Tiêu chuẩn an toàn mới được áp dụng trong quy trình cung ứng thực phẩm",
+    content: "Để nâng cao hơn nữa chất lượng bữa ăn cho thủy thủ đoàn, Nam Phương vừa áp dụng hệ thống bảo quản và vận chuyển thực phẩm bằng xe chuyên dụng mới. Điều này đảm bảo rau củ, thịt cá luôn giữ được sự tươi ngon tuyệt đối khi giao đến tận boong tàu.",
+    image_url: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Hoàn thành khóa huấn luyện an toàn hàng hải thường niên",
-    content: "Hơn 200 nhân viên đã hoàn thành xuất sắc khóa huấn luyện an toàn hàng hải nâng cao và ứng phó khẩn cấp thường niên, củng cố cam kết của chúng tôi đối với sự vận hành an toàn và xuất sắc.",
-    image_url: "https://images.unsplash.com/photo-1494412519320-aa3da6e05a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "Tổ chức hội thảo cập nhật quy định về chứng chỉ thuyền viên quốc tế",
+    content: "Nam Phương vừa phối hợp tổ chức một buổi hội thảo nhằm tư vấn và cập nhật những thay đổi mới nhất về yêu cầu pháp lý, kỹ thuật đối với các loại chứng chỉ thuyền viên làm việc trên biển. Sự kiện thu hút sự tham gia của nhiều đối tác và thủy thủ.",
+    image_url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Lắp đặt thiết bị tàu thủy thân thiện với môi trường",
-    content: "Chúng tôi đã bắt đầu sản xuất và lắp đặt các hệ thống động lực mới thân thiện với môi trường, giúp giảm 15% lượng nhiên liệu tiêu thụ và giảm thiểu đáng kể lượng khí thải.",
-    image_url: "https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "Cung cấp toàn diện vật tư, sơn và cáp vải cho giàn khoan dầu khí",
+    content: "Thêm một dự án lớn được Nam Phương hoàn thành xuất sắc khi cung ứng toàn bộ hệ thống vật tư, sơn chống rỉ và cáp vải chuyên dụng cho một giàn khoan dầu khí mới. Sản phẩm chất lượng cao của chúng tôi góp phần vào sự phát triển bền vững của ngành công nghiệp dầu khí.",
+    image_url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Hợp tác với mạng lưới logistics toàn cầu",
-    content: "NAM PHUONG đã chính thức hợp tác với một mạng lưới logistics hàng đầu toàn cầu để cung cấp các giải pháp vận chuyển trọn gói (door-to-door) cho khách hàng quốc tế của chúng tôi.",
-    image_url: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Nâng cấp đội cẩu nổi và thiết bị hạng nặng",
-    content: "Đội cẩu nổi của chúng tôi đã được nâng cấp với các thiết bị nâng hạng nặng mới, tăng sức nâng tối đa phục vụ cho các hoạt động thi công ngoài khơi và cứu hộ hàng hải.",
-    image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Gia hạn thành công Chứng nhận ISO 9001:2015",
-    content: "Chúng tôi tự hào thông báo rằng hệ thống quản lý chất lượng của công ty đã một lần nữa vượt qua kỳ đánh giá nghiêm ngặt để gia hạn chứng nhận ISO 9001:2015.",
-    image_url: "https://images.unsplash.com/photo-1494412519320-aa3da6e05a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "Đánh giá chất lượng quý: Khách hàng hài lòng tuyệt đối với dịch vụ bảo dưỡng",
+    content: "Theo kết quả khảo sát nội bộ quý vừa qua, 100% đối tác hàng hải và dầu khí đều bày tỏ sự an tâm và hài lòng với chất lượng dịch vụ bảo dưỡng, sửa chữa thiết bị của Nam Phương. Đây là động lực lớn để chúng tôi tiếp tục mang lại những giải pháp bền vững.",
+    image_url: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   }
 ];
 
 const galleryData = [
-  { image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Đánh bóng chân vịt tại xưởng" },
-  { image_url: "https://images.unsplash.com/photo-1494412519320-aa3da6e05a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Đóng mới tàu Binh An VALIANT" },
-  { image_url: "https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Sửa chữa tàu chở dầu trên ụ nổi" },
-  { image_url: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Hoạt động bốc dỡ hàng hóa tại cảng chính" },
-  { image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Lai dắt và cứu hộ ngoài khơi" },
-  { image_url: "https://images.unsplash.com/photo-1494412519320-aa3da6e05a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Sản xuất thiết bị điện hàng hải" },
-  { image_url: "https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Tổ chức và sắp xếp kho bãi" },
-  { image_url: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Gia công kết cấu thép" },
-  { image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Cẩu nổi đang hoạt động" },
-  { image_url: "https://images.unsplash.com/photo-1494412519320-aa3da6e05a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Toàn cảnh xưởng đóng tàu" }
+  { image_url: "https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Kỹ thuật viên bảo dưỡng thiết bị điện tử trên tàu" },
+  { image_url: "https://images.unsplash.com/photo-1504917595217-d4bf0611a9eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Kho vật tư phụ tùng và thiết bị hàng hải" },
+  { image_url: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Kiểm tra chất lượng thực phẩm sạch trước khi giao cho tàu" },
+  { image_url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Hỗ trợ tư vấn thủ tục visa và chứng chỉ cho thuyền viên" },
+  { image_url: "https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Cung ứng thiết bị dầu khí chính hãng" },
+  { image_url: "https://images.unsplash.com/photo-1566847416801-165c69b8f2e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Sửa chữa máy móc và thiết bị khẩn cấp ngoài khơi" },
+  { image_url: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Cung cấp rau củ và trái cây tươi cho thủy thủ đoàn" },
+  { image_url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Khóa đào tạo và cấp chứng chỉ hàng hải" },
+  { image_url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Vật tư sơn, cáp vải và dầu nhờn sẵn sàng giao hàng" },
+  { image_url: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", caption: "Kỹ thuật viên Nam Phương nghiệm thu công tác bảo dưỡng" }
 ];
 
 const contactData = [
