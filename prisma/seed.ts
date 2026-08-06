@@ -20,7 +20,13 @@ async function main() {
     return;
   }
 
-  const seedPassword = process.env.SEED_ADMIN_PASSWORD || 'change-me';
+  const seedPassword = process.env.SEED_ADMIN_PASSWORD;
+  if (!seedPassword) {
+    throw new Error(
+      'SEED_ADMIN_PASSWORD is not set. Run scripts/ensure-env.sh (via npm run dev/start/db:ensure) or set it in .env'
+    );
+  }
+
   const passwordHash = await bcrypt.hash(seedPassword, 12);
 
   await prisma.user.create({
@@ -31,9 +37,7 @@ async function main() {
     },
   });
 
-  console.log(
-    'Created default admin user (username: admin). Change SEED_ADMIN_PASSWORD before production.'
-  );
+  console.log('Created default admin user (username: admin).');
 }
 
 main()
