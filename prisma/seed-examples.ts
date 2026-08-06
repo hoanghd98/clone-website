@@ -83,54 +83,24 @@ const newsData = [
 
 const galleryData = [
   {
-    imageUrl:
-      'https://images.unsplash.com/photo-1586528116311-ad8ed7b6697b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Kỹ thuật viên bảo dưỡng thiết bị điện tử trên tàu',
+    imageUrl: '/uploads/3-ships.jpg',
+    caption: 'Đội tàu vận tải tại khu vực cảng',
   },
   {
-    imageUrl:
-      'https://images.unsplash.com/photo-1504917595217-d4bf0611a9eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Kho vật tư phụ tùng và thiết bị hàng hải',
+    imageUrl: '/uploads/ball_bering.jpg',
+    caption: 'Phụ tùng bạc đạn và vật tư kỹ thuật hàng hải',
   },
   {
-    imageUrl:
-      'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Kiểm tra chất lượng thực phẩm sạch trước khi giao cho tàu',
+    imageUrl: '/uploads/crane_truck_and_boat.jpg',
+    caption: 'Xe cẩu hỗ trợ bốc xếp hàng hóa tại cảng',
   },
   {
-    imageUrl:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Hỗ trợ tư vấn thủ tục visa và chứng chỉ cho thuyền viên',
+    imageUrl: '/uploads/large-ship.jpg',
+    caption: 'Tàu hàng lớn cập cảng',
   },
   {
-    imageUrl:
-      'https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Cung ứng thiết bị dầu khí chính hãng',
-  },
-  {
-    imageUrl:
-      'https://images.unsplash.com/photo-1566847416801-165c69b8f2e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Sửa chữa máy móc và thiết bị khẩn cấp ngoài khơi',
-  },
-  {
-    imageUrl:
-      'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Cung cấp rau củ và trái cây tươi cho thủy thủ đoàn',
-  },
-  {
-    imageUrl:
-      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Khóa đào tạo và cấp chứng chỉ hàng hải',
-  },
-  {
-    imageUrl:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Vật tư sơn, cáp vải và dầu nhờn sẵn sàng giao hàng',
-  },
-  {
-    imageUrl:
-      'https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    caption: 'Kỹ thuật viên Nam Phương nghiệm thu công tác bảo dưỡng',
+    imageUrl: '/uploads/port_and_ship.jpg',
+    caption: 'Hoạt động logistics tại cảng biển',
   },
 ];
 
