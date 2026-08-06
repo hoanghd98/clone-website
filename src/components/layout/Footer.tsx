@@ -69,14 +69,14 @@ export default function Footer() {
             <div className="space-y-4 mt-4 text-gray-300">
               <div className="bg-blue-800 p-3 rounded-lg">
                 <p className="font-semibold text-white">Phòng Kinh Doanh</p>
-                <p>Mr. Nguyễn Văn A: 0865 302 279</p>
-                <p>Skype: kinhdoanh_namphuong</p>
+                <p>Mr. Nguyễn Xuân Tùng: 0838 569 457</p>
+                <p>Email: commercial@namphuonggreen.com</p>
               </div>
-              <div className="bg-blue-800 p-3 rounded-lg">
-                <p className="font-semibold text-white">Phòng Kỹ Thuật</p>
-                <p>Mr. Trần Văn B: 0865 302 279</p>
-                <p>Skype: kythuat_namphuong</p>
-              </div>
+              {/*<div className="bg-blue-800 p-3 rounded-lg">*/}
+              {/*  <p className="font-semibold text-white">Phòng Kỹ Thuật</p>*/}
+              {/*  <p>Mr. Trần Văn B: 0865 302 279</p>*/}
+              {/*  <p>Skype: kythuat_namphuong</p>*/}
+              {/*</div>*/}
             </div>
           </div>
         </div>

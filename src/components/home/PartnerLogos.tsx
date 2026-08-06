@@ -4,11 +4,11 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const partnerLogos = [
-  "/upload/partners/partner1.png",
-  "/upload/partners/partner2.png",
-  "/upload/partners/partner3.png",
-  "/upload/partners/partner4.png",
-  "/upload/partners/partner5.png",
+  "/images/partners/partner1.png",
+  "/images/partners/partner2.png",
+  "/images/partners/partner3.png",
+  "/images/partners/partner4.png",
+  "/images/partners/partner5.png",
 ];
 
 export default function PartnerLogos() {
