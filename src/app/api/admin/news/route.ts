@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import { revalidatePublicContent } from '@/lib/public-cache';
 
 export const dynamic = 'force-dynamic';
 
@@ -39,6 +40,7 @@ export async function POST(request: Request) {
       },
     });
 
+    revalidatePublicContent('news');
     return NextResponse.json(news);
   } catch (error) {
     return NextResponse.json(

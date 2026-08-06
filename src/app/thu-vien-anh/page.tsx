@@ -1,12 +1,13 @@
-import Image from "next/image";
 import prisma from "@/lib/prisma";
+import { publicDynamic, publicRevalidate } from "@/lib/public-cache";
 
 export const metadata = {
   title: "Thư viện ảnh | NAM PHUONG",
   description: "Hình ảnh hoạt động và dự án của NAM PHUONG",
 };
 
-export const dynamic = 'force-dynamic';
+export const dynamic = publicDynamic;
+export const revalidate = publicRevalidate;
 
 export default async function GalleryPage() {
   const images = await prisma.gallery.findMany({
@@ -18,9 +19,9 @@ export default async function GalleryPage() {
   return (
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-primary-dark mb-4">Thư viện ảnh</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+        <div className="mb-12 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
+          <h1 className="text-4xl font-bold text-primary-dark">Thư viện ảnh</h1>
+          <p className="text-gray-600 text-lg">
             Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà NAM PHUONG đã thực hiện.
           </p>
         </div>
@@ -32,17 +33,17 @@ export default async function GalleryPage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {images.map((img) => (
-              <div 
+              <div
                 key={img.id}
                 className="group relative aspect-square overflow-hidden rounded-xl bg-gray-200 shadow-sm"
               >
-                <Image
+                <img
                   src={img.imageUrl}
                   alt={img.caption || "Hình ảnh NAM PHUONG"}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
-                
+
                 {img.caption && (
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <p className="text-white p-4 font-medium text-sm w-full truncate">

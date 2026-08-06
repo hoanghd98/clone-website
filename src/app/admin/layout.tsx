@@ -7,7 +7,8 @@ import {
   Image as ImageIcon, 
   Mail,
   LogOut,
-  Home
+  Home,
+  UserRound,
 } from 'lucide-react';
 
 export default function AdminLayout({
@@ -34,6 +35,7 @@ export default function AdminLayout({
     { name: 'Quản lý Tin tức', href: '/admin/news', icon: Newspaper },
     { name: 'Thư viện ảnh', href: '/admin/gallery', icon: ImageIcon },
     { name: 'Tin nhắn liên hệ', href: '/admin/contacts', icon: Mail },
+    { name: 'Tài khoản', href: '/admin/account', icon: UserRound },
   ];
 
   return (

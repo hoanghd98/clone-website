@@ -24,6 +24,12 @@ export default function AdminDashboard() {
           <p className="text-gray-600 mb-4">Xem các tin nhắn từ khách hàng.</p>
           <a href="/admin/contacts" className="text-primary-dark hover:underline">Đi tới Tin nhắn liên hệ &rarr;</a>
         </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Tài khoản</h3>
+          <p className="text-gray-600 mb-4">Đổi mật khẩu, email, số điện thoại và thông tin cá nhân.</p>
+          <a href="/admin/account" className="text-primary-dark hover:underline">Đi tới Tài khoản &rarr;</a>
+        </div>
       </div>
     </div>
   );

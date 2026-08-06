@@ -71,7 +71,7 @@ Prisma does **not** fully auto-recreate a usable DB:
 
 `scripts/ensure-env.sh` runs on `npm run dev` / `start` / `db:ensure` / `db:seed` and in the Docker entrypoint — it generates `JWT_SECRET` and `SEED_ADMIN_PASSWORD` when unset (persisted to `.env` and `.generated-env`, or `/app/data/.generated-env` in Docker).
 
-`npm run dev` does **not** run DB setup. Docker entrypoint runs `db:ensure` on start (skipped if DB already has users).
+`npm run dev` does **not** run DB setup. Docker builds with `next build` and runs `npm start` (production); the entrypoint runs `db:ensure` on start (skipped if DB already has users).
 
 ### Scripts
 
@@ -117,6 +117,7 @@ docker compose -f infrastructure/docker-compose.yml up -d --build
 
 | Topic | Behavior |
 | --- | --- |
+| Image | `next build` at image build; container runs `npm start` (production) |
 | First boot (empty volume) | Entrypoint runs `db:ensure` → schema + admin |
 | Restart / rebuild | Data kept in volume `sqlite_data` |
 | Wipe all Docker DB data | `docker compose -f infrastructure/docker-compose.yml down -v` |

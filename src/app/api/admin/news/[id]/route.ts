@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import prisma from '@/lib/prisma';
+import { revalidatePublicContent } from '@/lib/public-cache';
 
 export async function GET(
   request: Request,
@@ -42,6 +44,8 @@ export async function PUT(
       },
     });
 
+    revalidatePublicContent('news');
+    revalidatePath(`/tin-tuc/${params.id}`);
     return NextResponse.json(news);
   } catch (error) {
     return NextResponse.json(
@@ -60,6 +64,8 @@ export async function DELETE(
       where: { id: parseInt(params.id) },
     });
 
+    revalidatePublicContent('news');
+    revalidatePath(`/tin-tuc/${params.id}`);
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(

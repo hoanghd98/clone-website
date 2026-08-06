@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import { revalidatePublicContent } from '@/lib/public-cache';
 
 export async function GET(
   request: Request,
@@ -47,6 +48,7 @@ export async function PUT(
       },
     });
 
+    revalidatePublicContent('gallery');
     return NextResponse.json(gallery);
   } catch (error) {
     return NextResponse.json(
@@ -65,6 +67,7 @@ export async function DELETE(
       where: { id: parseInt(params.id) },
     });
 
+    revalidatePublicContent('gallery');
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(

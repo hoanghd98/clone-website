@@ -1,6 +1,6 @@
 FROM node:20-alpine
 
-# OpenSSL required by Prisma
+# OpenSSL required by Prisma; sqlite CLI optional for debugging
 RUN apk add --no-cache openssl sqlite
 
 WORKDIR /app
@@ -18,10 +18,15 @@ COPY . .
 COPY infrastructure/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# Persist SQLite outside /app/prisma so schema/migrations stay in the image
+# Build-time DB URL placeholder (runtime overridden by compose / env_file)
 ENV DATABASE_URL=file:/app/data/dev.db
+
+# Production build (minified JS/CSS, optimized .next output)
+RUN npm run build
+
+ENV NODE_ENV=production
 
 EXPOSE 3000
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

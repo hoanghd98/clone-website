@@ -2,13 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { Calendar } from "lucide-react";
+import { publicDynamic, publicRevalidate } from "@/lib/public-cache";
 
 export const metadata = {
   title: "Tin tức | NAM PHUONG",
   description: "Tin tức và sự kiện mới nhất từ NAM PHUONG",
 };
 
-export const dynamic = 'force-dynamic';
+export const dynamic = publicDynamic;
+export const revalidate = publicRevalidate;
 
 export default async function NewsPage() {
   const news = await prisma.news.findMany({

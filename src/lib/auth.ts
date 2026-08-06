@@ -1,6 +1,8 @@
 import bcrypt from 'bcryptjs';
+import { cookies } from 'next/headers';
 import prisma from '@/lib/prisma';
 import type { AuthUser } from '@/lib/jwt';
+import { JWT_COOKIE_NAME, verifyJwt } from '@/lib/jwt';
 
 export type { AuthUser };
 export {
@@ -34,4 +36,11 @@ export async function authenticateUser(
     username: user.username,
     role: user.role,
   };
+}
+
+/** Current logged-in user from JWT cookie (API routes). */
+export async function getSessionUser(): Promise<AuthUser | null> {
+  const token = cookies().get(JWT_COOKIE_NAME)?.value;
+  if (!token) return null;
+  return verifyJwt(token);
 }

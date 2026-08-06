@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { Calendar, ArrowLeft } from "lucide-react";
+import { publicDynamic, publicRevalidate } from "@/lib/public-cache";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = publicDynamic;
+export const revalidate = publicRevalidate;
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const news = await prisma.news.findUnique({
