@@ -1,14 +1,12 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
-
-const prisma = new PrismaClient();
 
 export async function GET() {
   try {
     const news = await prisma.news.findMany({
-      orderBy: { created_at: 'desc' },
+      orderBy: { createdAt: 'desc' },
     });
     return NextResponse.json(news);
   } catch (error) {
@@ -22,7 +20,9 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { title, content, image_url } = data;
+    const title = data.title;
+    const content = data.content;
+    const imageUrl = data.imageUrl ?? data.image_url ?? null;
 
     if (!title || !content) {
       return NextResponse.json(
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       data: {
         title,
         content,
-        image_url,
+        imageUrl,
       },
     });
 

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build:
@@ -8,14 +6,50 @@ services:
     container_name: clone_website_web
     ports:
       - "3000:3000"
+    env_file:
+      - ../.env
+    environment:
+      # SQLite file lives on a volume; schema/migrations stay in the image
+      DATABASE_URL: ${DATABASE_URL:-file:/app/data/dev.db}
     volumes:
-      # Mount the sqlite db and uploads directory to persist data
-      - database:/app/prisma
+      - sqlite_data:/app/data
       - ../public/uploads:/app/public/uploads
-    # environment:
-      # NODE_ENV: production
-    command: npm run dev
     restart: unless-stopped
 
+  # Optional Postgres: docker compose --profile postgres up -d
+  # Then set DATABASE_URL=postgresql://namphuong:namphuong@localhost:5432/namphuong?schema=public
+  db:
+    image: postgres:16-alpine
+    container_name: clone_website_db
+    profiles: ["postgres"]
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: namphuong
+      POSTGRES_PASSWORD: namphuong
+      POSTGRES_DB: namphuong
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Optional MySQL: docker compose --profile mysql up -d
+  # Then set DATABASE_URL=mysql://namphuong:namphuong@localhost:3306/namphuong
+  mysql:
+    image: mysql:8.4
+    container_name: clone_website_mysql
+    profiles: ["mysql"]
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: namphuong
+      MYSQL_USER: namphuong
+      MYSQL_PASSWORD: namphuong
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
 volumes:
-  database:
+  sqlite_data:
+  postgres_data:
+  mysql_data:

@@ -6,7 +6,7 @@ export default async function LatestNews() {
   // Fetch 3 most recent news
   const recentNews = await prisma.news.findMany({
     orderBy: {
-      created_at: 'desc'
+      createdAt: 'desc'
     },
     take: 3
   });
@@ -29,9 +29,9 @@ export default async function LatestNews() {
             {recentNews.map((news) => (
               <div key={news.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col">
                 <div className="relative h-48 w-full bg-gray-200">
-                  {news.image_url ? (
+                  {news.imageUrl ? (
                     <img 
-                      src={news.image_url} 
+                      src={news.imageUrl} 
                       alt={news.title}
                       className="w-full h-full object-cover"
                     />
@@ -43,7 +43,7 @@ export default async function LatestNews() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="text-xs text-gray-500 mb-2">
-                    {new Date(news.created_at).toLocaleDateString('vi-VN')}
+                    {new Date(news.createdAt).toLocaleDateString('vi-VN')}
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-gray-800 line-clamp-2 hover:text-primary-dark transition-colors">
                     <Link href={`/tin-tuc/${news.id}`}>

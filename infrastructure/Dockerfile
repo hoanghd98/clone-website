@@ -1,6 +1,6 @@
 FROM node:20-alpine
 
-# Install OpenSSL for Prisma and SQLite
+# OpenSSL required by Prisma
 RUN apk add --no-cache openssl sqlite
 
 WORKDIR /app
@@ -8,21 +8,20 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Initialize the database
-ENV DATABASE_URL=file:./dev.db
+# Generate Prisma client at build time (no DB writes / no seed)
 COPY prisma ./prisma/
-RUN npx prisma db push
 RUN npx prisma generate
-RUN npx tsx prisma/seed.ts
 
-# Copy project files
+# App source
 COPY . .
 
-# Build the project
-# RUN npm run build
+COPY infrastructure/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# Expose port
+# Persist SQLite outside /app/prisma so schema/migrations stay in the image
+ENV DATABASE_URL=file:/app/data/dev.db
+
 EXPOSE 3000
 
-# Start the application
-# CMD ["npm", "run", "dev"]
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["npm", "run", "dev"]

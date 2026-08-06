@@ -7,9 +7,9 @@ import ImageUpload from '@/components/ui/ImageUpload';
 
 interface GalleryItem {
   id: number;
-  image_url: string;
+  imageUrl: string;
   caption: string | null;
-  created_at: string;
+  createdAt: string;
 }
 
 export default function AdminGalleryPage() {
@@ -73,7 +73,7 @@ export default function AdminGalleryPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          image_url: imageUrl,
+          imageUrl: imageUrl,
           caption: caption || null,
         }),
       });
@@ -120,7 +120,7 @@ export default function AdminGalleryPage() {
           <div key={item.id} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200 group">
             <div className="relative h-48 w-full">
               <Image
-                src={item.image_url}
+                src={item.imageUrl}
                 alt={item.caption || 'Gallery image'}
                 fill
                 className="object-cover"

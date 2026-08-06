@@ -1,35 +1,174 @@
 # NAM PHUONG
 
-This is a Next.js project with Tailwind CSS and Prisma (SQLite).
+Next.js 14 website with Tailwind CSS, Prisma (SQLite by default), and JWT-based admin auth.
+
+Portable to PostgreSQL or MySQL later with small config changes.
 
 ## Prerequisites
 
-- Node.js (v18 or higher recommended)
+- Node.js 18+ (20 recommended)
 - npm
 
-## Installation
+## Quick start
 
-1. Clone the repository or navigate to the project folder.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Initialize the database and generate Prisma client:
-   ```bash
-   npx prisma db push
-   npx prisma generate
-   ```
-
-## Running the App
-
-Start the development server:
 ```bash
+cp .env.example .env
+# set JWT_SECRET (required) and optional SEED_ADMIN_PASSWORD
+openssl rand -base64 32
+
+npm install
+npm run db:ensure          # first time only when DB is empty
+npm run db:seed:examples   # optional demo content (manual)
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Site: [http://localhost:3000](http://localhost:3000)
+- Admin: [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
+- Default admin: username `admin`, password from `SEED_ADMIN_PASSWORD` (or `change-me`)
 
-## Health Check
+## Environment variables
 
-You can check the health of the application by navigating to:
+Copy `.env.example` → `.env`:
+
+| Variable | Required | Description |
+| --- | --- | --- |
+| `DATABASE_URL` | Yes | SQLite / Postgres / MySQL connection string |
+| `JWT_SECRET` | Yes | Secret used to sign admin JWT cookies |
+| `SEED_ADMIN_PASSWORD` | No | Password for first admin user (default `change-me`) |
+
+Local SQLite example:
+
+```env
+DATABASE_URL="file:./prisma/dev.db"
+```
+
+Prisma resolves that path relative to the `prisma/` folder, so the file is created at:
+
+```text
+prisma/prisma/dev.db
+```
+
+Docker uses `file:/app/data/dev.db` (volume-backed).
+
+## Admin authentication
+
+- Users live in the `User` table (`username`, `passwordHash`, `role`)
+- Login issues a signed **JWT** stored in httpOnly cookie `admin_token`
+- Middleware protects `/admin/*`, `/api/admin/*`, `/api/upload`, `/api/upload-url`
+- Login is rate-limited (5 attempts / 15 minutes per IP)
+
+Master seed creates the `admin` user only if it does not already exist (does not reset password on every run).
+
+## Database behavior
+
+Prisma does **not** fully auto-recreate a usable DB:
+
+| Missing | Auto? |
+| --- | --- |
+| SQLite `.db` file | Prisma may create an empty file |
+| Tables / indexes | No — need migrate / `db:ensure` |
+| Admin user | No — need seed / `db:ensure` |
+| Example news/gallery/contacts | No — run `db:seed:examples` manually |
+
+`npm run dev` does **not** run DB setup. Docker entrypoint runs `db:ensure` on start (skipped if DB already has users).
+
+### Scripts
+
+| Script | Purpose |
+| --- | --- |
+| `npm run db:ensure` | When DB empty: apply migrations + master seed (admin) |
+| `npm run db:seed` | Master data only (create admin if missing) |
+| `npm run db:seed:examples` | **Manual** demo News / Gallery / Contacts (replaces those tables) |
+| `npm run db:migrate` | Create/apply migrations in development |
+| `npm run db:migrate:deploy` | Apply migrations (production / Docker) |
+| `npm run db:push` | Sync schema without migration history |
+| `npm run db:generate` | Generate Prisma Client |
+| `npm run db:studio` | Open Prisma Studio |
+
+### Migrations folder
+
+`prisma/migrations/` holds schema history. This project keeps **one** init migration:
+
+```text
+prisma/migrations/00000000000000_init/migration.sql
+```
+
+It creates tables + indexes for the current schema. Seeds are separate (`seed.ts` / `seed-examples.ts`).
+
+### Reset / delete local DB
+
+Delete the SQLite data file only (not `schema.prisma` or `migrations/`):
+
+```bash
+rm -f prisma/prisma/dev.db prisma/prisma/dev.db-journal
+npm run db:ensure
+# optional:
+npm run db:seed:examples
+```
+
+After delete, the app will error until `db:ensure` (or Docker restart) recreates structure + admin.
+
+## Docker
+
+```bash
+docker compose -f infrastructure/docker-compose.yml up -d --build
+```
+
+| Topic | Behavior |
+| --- | --- |
+| First boot (empty volume) | Entrypoint runs `db:ensure` → schema + admin |
+| Restart / rebuild | Data kept in volume `sqlite_data` |
+| Wipe all Docker DB data | `docker compose -f infrastructure/docker-compose.yml down -v` |
+| Example data | Not auto-loaded |
+
+Load examples when needed:
+
+```bash
+docker compose -f infrastructure/docker-compose.yml exec web npm run db:seed:examples
+```
+
+Optional databases:
+
+```bash
+# PostgreSQL
+docker compose -f infrastructure/docker-compose.yml --profile postgres up -d
+
+# MySQL
+docker compose -f infrastructure/docker-compose.yml --profile mysql up -d
+```
+
+## Switching to PostgreSQL or MySQL
+
+App code uses Prisma only (no SQLite-specific queries).
+
+1. Start Postgres or MySQL (compose profiles above).
+2. In `prisma/schema.prisma`, set `provider` to `postgresql` or `mysql`.
+3. Update `DATABASE_URL` in `.env`.
+4. Recreate migrations for the new engine (do not reuse SQLite SQL as-is):
+
+   ```bash
+   rm -rf prisma/migrations
+   npx prisma migrate dev --name init
+   ```
+
+5. Run master setup / optional examples:
+
+   ```bash
+   npm run db:ensure
+   npm run db:seed:examples
+   ```
+
+MySQL note: if a unique `String` field fails index length limits, add `@db.VarChar(191)` after switching provider.
+
+## Project scripts (app)
+
+| Script | Purpose |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run build` | `prisma generate` + Next.js production build |
+| `npm run start` | Production server |
+| `npm run lint` | ESLint |
+
+## Health check
+
 [http://localhost:3000/api/health](http://localhost:3000/api/health)

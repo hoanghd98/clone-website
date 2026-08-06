@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
 export default async function NewsPage() {
   const news = await prisma.news.findMany({
     orderBy: {
-      created_at: 'desc'
+      createdAt: 'desc'
     }
   });
 
@@ -40,9 +40,9 @@ export default async function NewsPage() {
                 className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col group"
               >
                 <div className="relative h-56 w-full overflow-hidden">
-                  {item.image_url ? (
+                  {item.imageUrl ? (
                     <Image
-                      src={item.image_url}
+                      src={item.imageUrl}
                       alt={item.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -66,7 +66,7 @@ export default async function NewsPage() {
                       day: '2-digit',
                       month: '2-digit',
                       year: 'numeric'
-                    }).format(new Date(item.created_at))}
+                    }).format(new Date(item.createdAt))}
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-dark transition-colors">
                     {item.title}

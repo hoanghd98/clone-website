@@ -62,14 +62,14 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric'
-              }).format(new Date(news.created_at))}
+              }).format(new Date(news.createdAt))}
             </span>
           </div>
 
-          {news.image_url && (
+          {news.imageUrl && (
             <div className="relative w-full h-[400px] md:h-[500px] mb-10 rounded-xl overflow-hidden shadow-sm">
               <Image
-                src={news.image_url}
+                src={news.imageUrl}
                 alt={news.title}
                 fill
                 className="object-cover"

@@ -16,7 +16,7 @@ export default function EditNewsPage() {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    image_url: '',
+    imageUrl: '',
   });
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function EditNewsPage() {
           setFormData({
             title: data.title,
             content: data.content,
-            image_url: data.image_url || '',
+            imageUrl: data.imageUrl || '',
           });
         } else {
           alert('Không tìm thấy bài viết');
@@ -108,8 +108,8 @@ export default function EditNewsPage() {
             Hình ảnh đại diện
           </label>
           <ImageUpload 
-            value={formData.image_url}
-            onChange={(url) => setFormData({ ...formData, image_url: url })}
+            value={formData.imageUrl}
+            onChange={(url) => setFormData({ ...formData, imageUrl: url })}
           />
         </div>
 

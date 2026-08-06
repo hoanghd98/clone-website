@@ -8,8 +8,8 @@ import { Pencil, Trash2, Plus } from 'lucide-react';
 interface News {
   id: number;
   title: string;
-  image_url: string | null;
-  created_at: string;
+  imageUrl: string | null;
+  createdAt: string;
 }
 
 export default function AdminNewsPage() {
@@ -90,10 +90,10 @@ export default function AdminNewsPage() {
             {news.map((item) => (
               <tr key={item.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  {item.image_url ? (
+                  {item.imageUrl ? (
                     <div className="relative h-16 w-24">
                       <Image
-                        src={item.image_url}
+                        src={item.imageUrl}
                         alt={item.title}
                         fill
                         className="object-cover rounded"
@@ -111,7 +111,7 @@ export default function AdminNewsPage() {
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {new Date(item.created_at).toLocaleDateString('vi-VN')}
+                  {new Date(item.createdAt).toLocaleDateString('vi-VN')}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <Link

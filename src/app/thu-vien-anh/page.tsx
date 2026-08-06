@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default async function GalleryPage() {
   const images = await prisma.gallery.findMany({
     orderBy: {
-      created_at: 'desc'
+      createdAt: 'desc'
     }
   });
 
@@ -37,7 +37,7 @@ export default async function GalleryPage() {
                 className="group relative aspect-square overflow-hidden rounded-xl bg-gray-200 shadow-sm"
               >
                 <Image
-                  src={img.image_url}
+                  src={img.imageUrl}
                   alt={img.caption || "Hình ảnh NAM PHUONG"}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"

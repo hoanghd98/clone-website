@@ -12,7 +12,7 @@ export default function CreateNewsPage() {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    image_url: '',
+    imageUrl: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -75,8 +75,8 @@ export default function CreateNewsPage() {
             Hình ảnh đại diện
           </label>
           <ImageUpload 
-            value={formData.image_url}
-            onChange={(url) => setFormData({ ...formData, image_url: url })}
+            value={formData.imageUrl}
+            onChange={(url) => setFormData({ ...formData, imageUrl: url })}
           />
         </div>
 

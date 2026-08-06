@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/prisma';
 
 export async function GET(
   request: Request,
@@ -31,14 +29,16 @@ export async function PUT(
 ) {
   try {
     const data = await request.json();
-    const { title, content, image_url } = data;
+    const title = data.title;
+    const content = data.content;
+    const imageUrl = data.imageUrl ?? data.image_url ?? null;
 
     const news = await prisma.news.update({
       where: { id: parseInt(params.id) },
       data: {
         title,
         content,
-        image_url,
+        imageUrl,
       },
     });
 

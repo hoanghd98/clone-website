@@ -9,7 +9,7 @@ interface ContactMessage {
   email: string;
   phone: string | null;
   message: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export default function AdminContactsPage() {
@@ -70,7 +70,7 @@ export default function AdminContactsPage() {
                     )}
                     <div className="flex items-center gap-1.5">
                       <Calendar className="w-4 h-4 text-gray-400" />
-                      {new Date(contact.created_at).toLocaleString('vi-VN')}
+                      {new Date(contact.createdAt).toLocaleString('vi-VN')}
                     </div>
                   </div>
 
