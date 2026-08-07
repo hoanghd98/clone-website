@@ -13,7 +13,8 @@ services:
       DATABASE_URL: ${DATABASE_URL:-file:/app/data/dev.db}
     volumes:
       - sqlite_data:/app/data
-      - ../public/uploads:/app/public/uploads
+      # Outside the git repo so actions/checkout cannot wipe uploads
+      - ../../public/uploads:/app/public/uploads
     restart: unless-stopped
 
   # Optional Postgres: docker compose --profile postgres up -d

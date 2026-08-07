@@ -119,8 +119,9 @@ docker compose -f infrastructure/docker-compose.yml up -d --build
 | --- | --- |
 | Image | `next build` at image build; container runs `npm start` (production) |
 | First boot (empty volume) | Entrypoint runs `db:ensure` → schema + admin |
-| Restart / rebuild | Data kept in volume `sqlite_data` |
-| Wipe all Docker DB data | `docker compose -f infrastructure/docker-compose.yml down -v` |
+| Restart / rebuild | DB kept in volume `sqlite_data` |
+| Uploads | Bind-mounted from `../../public/uploads` (outside the git repo, so deploy checkout cannot wipe them) |
+| Wipe Docker DB data | `docker compose -f infrastructure/docker-compose.yml down -v` |
 | Example data | Not auto-loaded |
 
 Load examples when needed:
