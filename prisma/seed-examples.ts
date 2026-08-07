@@ -5,8 +5,11 @@ const prisma = new PrismaClient();
 /**
  * Example / demo content only.
  * Run manually: npm run db:seed:examples
- * This replaces News, Gallery, and ContactMessage rows.
- * It does NOT touch User (admin) records.
+ * Idempotent: inserts only when the match field is missing.
+ *   - News: title
+ *   - Gallery: imageUrl
+ *   - ContactMessage: email
+ * Does NOT touch User (admin) records or delete existing rows.
  */
 const newsData = [
   {
@@ -158,27 +161,56 @@ const contactData = [
 ];
 
 async function main() {
-  console.log('Seeding example data (manual)...');
+  console.log('Seeding example data (manual, idempotent)...');
 
-  await prisma.news.deleteMany();
-  await prisma.gallery.deleteMany();
-  await prisma.contactMessage.deleteMany();
-  console.log('Cleared existing News / Gallery / ContactMessage rows.');
-
+  let newsCreated = 0;
+  let newsSkipped = 0;
   for (const news of newsData) {
+    const existing = await prisma.news.findFirst({
+      where: { title: news.title },
+    });
+    if (existing) {
+      newsSkipped += 1;
+      continue;
+    }
     await prisma.news.create({ data: news });
+    newsCreated += 1;
   }
-  console.log(`Added ${newsData.length} news items.`);
+  console.log(`News: ${newsCreated} created, ${newsSkipped} skipped (match: title).`);
 
+  let galleryCreated = 0;
+  let gallerySkipped = 0;
   for (const gallery of galleryData) {
+    const existing = await prisma.gallery.findFirst({
+      where: { imageUrl: gallery.imageUrl },
+    });
+    if (existing) {
+      gallerySkipped += 1;
+      continue;
+    }
     await prisma.gallery.create({ data: gallery });
+    galleryCreated += 1;
   }
-  console.log(`Added ${galleryData.length} gallery images.`);
+  console.log(
+    `Gallery: ${galleryCreated} created, ${gallerySkipped} skipped (match: imageUrl).`
+  );
 
+  let contactCreated = 0;
+  let contactSkipped = 0;
   for (const contact of contactData) {
+    const existing = await prisma.contactMessage.findFirst({
+      where: { email: contact.email },
+    });
+    if (existing) {
+      contactSkipped += 1;
+      continue;
+    }
     await prisma.contactMessage.create({ data: contact });
+    contactCreated += 1;
   }
-  console.log(`Added ${contactData.length} contact messages.`);
+  console.log(
+    `Contacts: ${contactCreated} created, ${contactSkipped} skipped (match: email).`
+  );
 
   console.log('Example data seed complete.');
 }

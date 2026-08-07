@@ -5,5 +5,13 @@ Dockerfile
 docker-compose.yml
 npm-debug.log
 .env
-prisma/dev.db
+.generated-env
+*.db
+*.db-journal
+prisma/**/*.db
+prisma/**/*.db-journal
 docs
+data/*
+!data/.gitkeep
+public/uploads/*
+!public/uploads/.gitkeep

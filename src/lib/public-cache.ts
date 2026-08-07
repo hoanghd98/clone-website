@@ -4,6 +4,9 @@ import { revalidatePath } from 'next/cache';
  * Public page segment caching.
  * - next dev (NODE_ENV=development): always fresh (force-dynamic)
  * - next build / start / Docker production: ISR revalidate window
+ *
+ * Docker image build creates an empty SQLite file so prerender can open the DB.
+ * Runtime mounts the real volume over /app/data; ISR refreshes within revalidate.
  */
 const isDev = process.env.NODE_ENV === 'development';
 

@@ -2,9 +2,9 @@ import { execSync } from 'child_process';
 import { PrismaClient } from '@prisma/client';
 
 /**
- * Runs only when the database is empty (no usable schema / no users).
- * - Applies migrations (structure + indexes)
- * - Seeds master data required to run the app (admin user)
+ * Runtime DB setup (Docker entrypoint / npm run db:ensure):
+ * - Always apply migrations (or db push fallback)
+ * - Always run master seed (admin only; idempotent)
  *
  * Example/demo data is NOT loaded here. Run: npm run db:seed:examples
  */
@@ -13,28 +13,20 @@ function run(command: string) {
   execSync(command, { stdio: 'inherit' });
 }
 
-async function databaseNeedsInit(): Promise<boolean> {
+async function hasUsableSchema(): Promise<boolean> {
   const prisma = new PrismaClient();
   try {
-    const userCount = await prisma.user.count();
-    return userCount === 0;
-  } catch {
-    // Tables/migrations not applied yet
+    await prisma.user.count();
     return true;
+  } catch {
+    return false;
   } finally {
     await prisma.$disconnect();
   }
 }
 
 async function main() {
-  const needsInit = await databaseNeedsInit();
-
-  if (!needsInit) {
-    console.log('[ensure-db] Database already initialized — skipping migrate/seed.');
-    return;
-  }
-
-  console.log('[ensure-db] Empty database detected — applying schema + master data...');
+  console.log('[ensure-db] Applying schema migrations...');
 
   try {
     run('npx prisma migrate deploy');
@@ -45,8 +37,14 @@ async function main() {
     run('npx prisma db push');
   }
 
+  if (!(await hasUsableSchema())) {
+    console.error('[ensure-db] Schema still unavailable after migrate/push.');
+    process.exit(1);
+  }
+
+  console.log('[ensure-db] Ensuring master data (admin)...');
   run('npx tsx prisma/seed.ts');
-  console.log('[ensure-db] First-time database setup complete.');
+  console.log('[ensure-db] Database ready.');
 }
 
 main().catch((error) => {

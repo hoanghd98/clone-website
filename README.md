@@ -38,16 +38,16 @@ Copy `.env.example` → `.env`:
 Local SQLite example:
 
 ```env
-DATABASE_URL="file:./prisma/dev.db"
+DATABASE_URL="file:../data/dev.db"
 ```
 
-Prisma resolves that path relative to the `prisma/` folder, so the file is created at:
+Prisma resolves SQLite paths relative to the `prisma/` folder, so that file is:
 
 ```text
-prisma/prisma/dev.db
+data/dev.db
 ```
 
-Docker uses `file:/app/data/dev.db` (volume-backed).
+Docker compose sets `DATABASE_URL=file:/app/data/dev.db` and bind-mounts `./data` → `/app/data`.
 
 ## Admin authentication
 
@@ -69,17 +69,17 @@ Prisma does **not** fully auto-recreate a usable DB:
 | Admin user | No — need seed / `db:ensure` |
 | Example news/gallery/contacts | No — run `db:seed:examples` manually |
 
-`scripts/ensure-env.sh` runs on `npm run dev` / `start` / `db:ensure` / `db:seed` and in the Docker entrypoint — it generates `JWT_SECRET` and `SEED_ADMIN_PASSWORD` when unset (persisted to `.env` and `.generated-env`, or `/app/data/.generated-env` in Docker).
+`scripts/ensure-env.sh` runs on `npm run dev` / `start` / `db:ensure` / `db:seed` and in the Docker **entrypoint at container start** (not during image build) — it generates `JWT_SECRET` and `SEED_ADMIN_PASSWORD` when unset (persisted to `.env` and `.generated-env`, or `/app/data/.generated-env` in Docker).
 
-`npm run dev` does **not** run DB setup. Docker builds with `next build` and runs `npm start` (production); the entrypoint runs `db:ensure` on start (skipped if DB already has users).
+`npm run dev` does **not** run DB setup.
 
 ### Scripts
 
 | Script | Purpose |
 | --- | --- |
-| `npm run db:ensure` | When DB empty: apply migrations + master seed (admin) |
+| `npm run db:ensure` | Apply migrations + master seed (admin; idempotent) |
 | `npm run db:seed` | Master data only (create admin if missing) |
-| `npm run db:seed:examples` | **Manual** demo News / Gallery / Contacts (replaces those tables) |
+| `npm run db:seed:examples` | **Manual** demo News / Gallery / Contacts (idempotent; skip if title / imageUrl / email exists) |
 | `npm run db:migrate` | Create/apply migrations in development |
 | `npm run db:migrate:deploy` | Apply migrations (production / Docker) |
 | `npm run db:push` | Sync schema without migration history |
@@ -101,7 +101,7 @@ It creates tables + indexes for the current schema. Seeds are separate (`seed.ts
 Delete the SQLite data file only (not `schema.prisma` or `migrations/`):
 
 ```bash
-rm -f prisma/prisma/dev.db prisma/prisma/dev.db-journal
+rm -f data/dev.db data/dev.db-journal
 npm run db:ensure
 # optional:
 npm run db:seed:examples
@@ -111,24 +111,35 @@ After delete, the app will error until `db:ensure` (or Docker restart) recreates
 
 ## Docker
 
+Bind mounts use in-repo paths (gitignored; not committed):
+
+```text
+.env                 → compose env_file
+data/                → /app/data  (dev.db, .generated-env)
+public/uploads/      → /app/public/uploads
+```
+
+Deploy uses `actions/checkout` with `clean: false` so those ignored files are **not** deleted on each push.
+
+### Flow
+
+1. **Image build** — migrate/schema-only SQLite (for ISR prerender) + `next build`. No secrets/admin seed in the image.
+2. **Compose start** — bind-mounts `data/` and `public/uploads/`. Entrypoint runs `ensure-env` then `db:ensure` (admin).
+3. **Optional demo data** (manual, after up):
+
 ```bash
 docker compose -f infrastructure/docker-compose.yml up -d --build
+docker compose -f infrastructure/docker-compose.yml exec web npm run db:seed:examples
 ```
 
 | Topic | Behavior |
 | --- | --- |
-| Image | `next build` at image build; container runs `npm start` (production) |
-| First boot (empty volume) | Entrypoint runs `db:ensure` → schema + admin |
-| Restart / rebuild | DB kept in volume `sqlite_data` |
-| Uploads | Bind-mounted from `../../public/uploads` (outside the git repo, so deploy checkout cannot wipe them) |
-| Wipe Docker DB data | `docker compose -f infrastructure/docker-compose.yml down -v` |
-| Example data | Not auto-loaded |
-
-Load examples when needed:
-
-```bash
-docker compose -f infrastructure/docker-compose.yml exec web npm run db:seed:examples
-```
+| Image | Schema-only DB + `next build`; secrets not baked in |
+| Container start | `ensure-env` (JWT + admin password) → migrate + admin seed |
+| Git deploy | `clean: false` keeps `.env`, `data/`, `public/uploads/` |
+| Wipe DB + rebuild (keep uploads) | `npm run docker:reset` |
+| Public page cache | ISR `revalidate=60` in production; admin mutations call `revalidatePath` |
+| Example data | Not auto-loaded — run `db:seed:examples` after up |
 
 Optional databases:
 

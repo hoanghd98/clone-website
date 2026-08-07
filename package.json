@@ -14,7 +14,8 @@
     "db:ensure": "sh -c '. scripts/ensure-env.sh && exec tsx scripts/ensure-db.ts'",
     "db:seed": "sh -c '. scripts/ensure-env.sh && exec tsx prisma/seed.ts'",
     "db:seed:examples": "tsx prisma/seed-examples.ts",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "docker:reset": "sh scripts/docker-reset.sh"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

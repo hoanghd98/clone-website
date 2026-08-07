@@ -10,8 +10,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      # clean: false keeps gitignored files (uploads, data/, .env) across deploys
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          clean: false
 
       - name: Build and Start with Docker Compose
         run: docker compose -f infrastructure/docker-compose.yml up -d --build

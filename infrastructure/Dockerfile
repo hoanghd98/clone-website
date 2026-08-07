@@ -12,14 +12,19 @@ RUN npm install
 COPY prisma ./prisma/
 RUN npx prisma generate
 
-# App source
+# App source (.env / .generated-env are dockerignored — never baked into the image)
 COPY . .
 
 COPY infrastructure/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# Build-time DB URL placeholder (runtime overridden by compose / env_file)
+# Build-time DB: schema only so `next build` ISR prerender can open SQLite.
+# Secrets (JWT_SECRET, SEED_ADMIN_PASSWORD) and admin seed run at container start.
 ENV DATABASE_URL=file:/app/data/dev.db
+ENV JWT_SECRET=
+ENV SEED_ADMIN_PASSWORD=
+RUN mkdir -p /app/data \
+  && (npx prisma migrate deploy || npx prisma db push)
 
 # Production build (minified JS/CSS, optimized .next output)
 RUN npm run build
