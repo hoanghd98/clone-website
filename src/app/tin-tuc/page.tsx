@@ -5,8 +5,8 @@ import { Calendar } from "lucide-react";
 import { publicDynamic, publicRevalidate } from "@/lib/public-cache";
 
 export const metadata = {
-  title: "Tin tức | NAM PHUONG",
-  description: "Tin tức và sự kiện mới nhất từ NAM PHUONG",
+  title: "Tin tức | Nam Phương",
+  description: "Tin tức và sự kiện mới nhất từ Nam Phương",
 };
 
 export const dynamic = publicDynamic;
@@ -25,7 +25,7 @@ export default async function NewsPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-primary-dark mb-4">Tin tức & Sự kiện</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Cập nhật những thông tin mới nhất về hoạt động của NAM PHUONG và ngành hàng hải.
+            Cập nhật những thông tin mới nhất về hoạt động của Nam Phương và ngành hàng hải.
           </p>
         </div>
 

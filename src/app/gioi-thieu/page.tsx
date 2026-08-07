@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "Giới thiệu | NAM PHUONG",
-  description: "Giới thiệu về Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG",
+  title: "Giới thiệu | Nam Phương",
+  description: "Giới thiệu về Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương",
 };
 
 export default function AboutPage() {
@@ -15,13 +15,13 @@ export default function AboutPage() {
             <div className="absolute inset-0 opacity-20">
               <Image
                 src="/images/bg-home.png"
-                alt="Giới thiệu NAM PHUONG"
+                alt="Giới thiệu Nam Phương"
                 fill
                 className="object-cover"
               />
             </div>
             <h1 className="relative z-10 text-4xl font-bold text-primary-content text-center">
-              Giới thiệu về NAM PHUONG
+              Giới thiệu về Công ty Nam Phương
             </h1>
           </div>
 

@@ -2,8 +2,8 @@ import prisma from "@/lib/prisma";
 import { publicDynamic, publicRevalidate } from "@/lib/public-cache";
 
 export const metadata = {
-  title: "Thư viện ảnh | NAM PHUONG",
-  description: "Hình ảnh hoạt động và dự án của NAM PHUONG",
+  title: "Thư viện ảnh | Nam Phương",
+  description: "Hình ảnh hoạt động và dự án của Nam Phương",
 };
 
 export const dynamic = publicDynamic;
@@ -22,7 +22,7 @@ export default async function GalleryPage() {
         <div className="mb-12 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
           <h1 className="text-4xl font-bold text-primary-dark">Thư viện ảnh</h1>
           <p className="text-gray-600 text-lg">
-            Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà NAM PHUONG đã thực hiện.
+            Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà Nam Phương đã thực hiện.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default async function GalleryPage() {
               >
                 <img
                   src={img.imageUrl}
-                  alt={img.caption || "Hình ảnh NAM PHUONG"}
+                  alt={img.caption || "Hình ảnh Nam Phương"}
                   className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />

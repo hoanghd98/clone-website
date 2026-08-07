@@ -45,7 +45,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image src="/images/logo.jpg" alt="NAM PHUONG Logo" width={200} height={60} className="h-16 w-auto object-contain" priority />
+            <Image src="/images/logo.jpg" alt="Nam Phương Logo" width={200} height={60} className="h-16 w-auto object-contain" priority />
           </Link>
 
           {/* Mobile Menu Button */}

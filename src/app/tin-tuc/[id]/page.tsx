@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   if (!news) {
     return {
-      title: "Không tìm thấy bài viết | NAM PHUONG"
+      title: "Không tìm thấy bài viết | Nam Phương"
     };
   }
 
   return {
-    title: `${news.title} | NAM PHUONG`,
+    title: `${news.title} | Nam Phương`,
     description: news.content.substring(0, 160).replace(/<[^>]*>?/gm, ''),
   };
 }

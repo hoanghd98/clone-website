@@ -9,7 +9,7 @@ export default function HeroBanner() {
         <div className="w-full h-full bg-primary opacity-60 absolute z-10"></div>
         <img
           src="/images/bg-home.png"
-          alt="Nam Phuong Background"
+          alt="Nam Phương Background"
           className="w-full h-full object-cover"
         />
       </div>
@@ -18,13 +18,13 @@ export default function HeroBanner() {
       <div
         className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
         <h1 className="text-lg md:text-2xl lg:text-3xl font-bold mb-4 uppercase tracking-wider">
-          Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG
+          Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương
         </h1>
         <h1 className="text-lg md:text-2xl lg:text-3xl font-bold mb-4 uppercase tracking-wider">
           Uy tín, chất lượng, chuyên nghiệp.
         </h1>
         {/*<p className="text-lg md:text-xl mb-8 max-w-2xl">*/}
-        {/*  Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG - Uy tín, chất lượng, chuyên nghiệp.*/}
+        {/*  Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương - Uy tín, chất lượng, chuyên nghiệp.*/}
         {/*</p>*/}
         <Link
           href="/lien-he"

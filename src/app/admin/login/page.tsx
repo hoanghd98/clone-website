@@ -46,7 +46,7 @@ export default function AdminLoginPage() {
         <div className="flex justify-center mb-8">
           <Image
             src="/images/logo.jpg"
-            alt="NAM PHUONG Logo"
+            alt="Nam Phương Logo"
             width={200}
             height={60}
             className="h-12 w-auto"

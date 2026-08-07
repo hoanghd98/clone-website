@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Dịch vụ | NAM PHUONG",
-  description: "Các dịch vụ của Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG",
+  title: "Dịch vụ | Nam Phương",
+  description: "Các dịch vụ của Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương",
 };
 
 const services = [
@@ -44,7 +44,7 @@ export default function ServicesPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-primary-dark mb-4">Dịch vụ của chúng tôi</h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            NAM PHUONG cung cấp đa dạng các dịch vụ trong lĩnh vực hàng hải, vận tải biển, đóng tàu và logistics với chất lượng hàng đầu.
+            Nam Phương cung cấp đa dạng các dịch vụ trong lĩnh vực hàng hải, vận tải biển, đóng tàu và logistics với chất lượng hàng đầu.
           </p>
         </div>
 

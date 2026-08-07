@@ -7,14 +7,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 border-b-2 border-yellow-400 inline-block pb-1 uppercase">Công ty TNHH DV Hàng Hải &<br/> Vận Tải Biển NAM PHUONG</h3>
+            <h3 className="text-xl font-bold mb-4 border-b-2 border-yellow-400 inline-block pb-1 uppercase">Công ty TNHH Thương Mại Dịch Vụ<br/> Phát Triển Kỹ Thuật Nam Phương</h3>
             <div className="space-y-3 mt-4">
               <p className="flex items-start text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 mt-0.5 text-yellow-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Số 7, Đường Ngô Gia Tự, Phường Tam Thắng, Thành phố Hồ Chí Minh, Việt Nam</span>
+                <span>Số 7, Đường Ngô Gia Tự, Phường Tam Thắng, TP Hồ Chí Minh, Việt Nam</span>
               </p>
               <p className="flex items-center text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-yellow-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,7 +83,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-blue-800 mt-10 pt-6 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Công ty TNHH NAM PHUONG. Bảo lưu mọi quyền.</p>
+          <p>&copy; {new Date().getFullYear()} Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương. Bảo lưu mọi quyền.</p>
         </div>
       </div>
     </footer>

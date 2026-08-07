@@ -63,7 +63,7 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Công ty TNHH DV Hàng Hải & Vận Tải Biển NAM PHUONG</h3>
+                  <h3 className="text-lg font-semibold text-white mb-2">Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương</h3>
                 </div>
                 
                 <div className="flex items-start">
@@ -71,7 +71,7 @@ export default function ContactPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <p className="text-white">Số 7, Đường Ngô Gia Tự, Phường Tam Thắng, Thành phố Hồ Chí Minh, Việt Nam</p>
+                  <p className="text-white">Số 7, Đường Ngô Gia Tự, Phường Tam Thắng, TP Hồ Chí Minh, Việt Nam</p>
                 </div>
 
                 <div className="flex items-start">
@@ -217,7 +217,7 @@ export default function ContactPage() {
             style={{ border: 0 }} 
             allowFullScreen 
             loading="lazy"
-            title="Bản đồ vị trí NAM PHUONG"
+            title="Bản đồ vị trí Nam Phương"
           ></iframe>
         </div>
       </div>
