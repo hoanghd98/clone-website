@@ -19,7 +19,7 @@ export default async function GalleryPage() {
   return (
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <div className="mb-12 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center">
+        <div className="mb-12 items-baseline justify-center gap-x-3 gap-y-2 text-center">
           <h1 className="text-4xl font-bold text-primary-dark">Thư viện ảnh</h1>
           <p className="text-gray-600 text-lg">
             Những khoảnh khắc đáng nhớ và hình ảnh các dự án mà Nam Phương đã thực hiện.

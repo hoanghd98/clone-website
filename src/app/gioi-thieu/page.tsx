@@ -33,10 +33,9 @@ export default function AboutPage() {
               </h2>
               
               <p className="mb-6 leading-relaxed">
-                CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ PHÁT TRIỂN KỸ THUẬT NAM PHƯƠNG với lĩnh vực 
-                chính sửa chữa tàu biển, cung cấp thực phẩm, vật tư thiết bị hàng hải, dầu khí với đội ngũ nhân 
-                viên chuyên môn cao và tận tâm với khách hàng. Với triết lý kinh doanh trên, chúng tôi thi công 
-                các dự án chất lượng cao và giải pháp tiên tiến trong ngành hàng hải.
+                Với lĩnh vực chính sửa chữa tàu biển, cung cấp thực phẩm, vật tư thiết bị hàng hải, dầu khí với
+                đội ngũ nhân viên chuyên môn cao và tận tâm với khách hàng. Với triết lý kinh doanh trên, chúng
+                tôi thi công các dự án chất lượng cao và giải pháp tiên tiến trong ngành hàng hải.
               </p>
 
               <div className="mt-8 bg-gray-50 p-6 rounded-lg border border-gray-100">
@@ -47,7 +46,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex flex-col md:flex-row md:items-start">
                     <span className="font-semibold text-primary-dark md:w-1/4">Tên quốc tế:</span>
-                    <span className="text-gray-700 md:w-3/4">NAM PHUONG TECHNICAL DEVELOPMENT SERVICES TRADING COMPANY LIMITED</span>
+                    <span className="text-gray-700 md:w-3/4">Nam Phuong Technical Development Trading And Service CO.LTD.</span>
                   </li>
                   <li className="flex flex-col md:flex-row md:items-start">
                     <span className="font-semibold text-primary-dark md:w-1/4">Mã số thuế:</span>

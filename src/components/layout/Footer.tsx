@@ -26,7 +26,7 @@ export default function Footer() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-yellow-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>Email: ceo.deputy@namphuonggreen.com</span>
+                <span>Email:  info@namphuonggreen.com </span>
               </p>
             </div>
           </div>
@@ -70,20 +70,15 @@ export default function Footer() {
               <div className="bg-blue-800 p-3 rounded-lg">
                 <p className="font-semibold text-white">Phòng Kinh Doanh</p>
                 <p>Mr. Nguyễn Xuân Tùng: 0838 569 457</p>
-                <p>Email: commercial@namphuonggreen.com</p>
+                <p>Email:  info@namphuonggreen.com </p>
               </div>
-              {/*<div className="bg-blue-800 p-3 rounded-lg">*/}
-              {/*  <p className="font-semibold text-white">Phòng Kỹ Thuật</p>*/}
-              {/*  <p>Mr. Trần Văn B: 0865 302 279</p>*/}
-              {/*  <p>Skype: kythuat_namphuong</p>*/}
-              {/*</div>*/}
             </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-blue-800 mt-10 pt-6 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương. Bảo lưu mọi quyền.</p>
+          <p>&copy; {new Date().getFullYear()} Công ty TNHH Thương Mại Dịch Vụ Phát Triển Kỹ Thuật Nam Phương.</p>
         </div>
       </div>
     </footer>
