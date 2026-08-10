@@ -193,12 +193,13 @@ export default function ContactPage() {
         <div className="mt-12 max-w-6xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden h-96 relative">
           {/* Embed Google Maps */}
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.954410425785!2d106.73685431526017!3d10.738002292347585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175258e7b99812f%3A0x8673a55225d7b51b!2sThe%20Bridgeview%20Apartment!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+            src="https://www.google.com/maps?q=S%E1%BB%91+7,+%C4%90%C6%B0%E1%BB%9Dng+Ng%C3%B4+Gia+T%E1%BB%B1,+Ph%C6%B0%E1%BB%9Dng+Tam+Th%E1%BA%AFng,+TP+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam&hl=vi&z=16&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
             allowFullScreen 
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             title="Bản đồ vị trí Nam Phương"
           ></iframe>
         </div>
