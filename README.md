@@ -79,7 +79,7 @@ Prisma does **not** fully auto-recreate a usable DB:
 | --- | --- |
 | `npm run db:ensure` | Apply migrations + master seed (admin; idempotent) |
 | `npm run db:seed` | Master data only (create admin if missing) |
-| `npm run db:seed:examples` | **Manual** demo News / Gallery / Contacts (idempotent; skip if title / imageUrl / email exists) |
+| `npm run db:seed:examples` | **Manual** demo News / Gallery / Contacts (idempotent by id: insert or update; advances next auto id) |
 | `npm run db:migrate` | Create/apply migrations in development |
 | `npm run db:migrate:deploy` | Apply migrations (production / Docker) |
 | `npm run db:push` | Sync schema without migration history |
@@ -153,11 +153,11 @@ docker compose -f infrastructure/docker-compose.yml --profile mysql up -d
 
 ## Switching to PostgreSQL or MySQL
 
-App code uses Prisma only (no SQLite-specific queries).
+App/seed code uses Prisma APIs. Dialect-specific bits (id sequence sync after explicit-id seeds) live in adapters under `prisma/lib/` — not inlined in seed scripts.
 
 1. Start Postgres or MySQL (compose profiles above).
 2. In `prisma/schema.prisma`, set `provider` to `postgresql` or `mysql`.
-3. Update `DATABASE_URL` in `.env`.
+3. Update `DATABASE_URL` in `.env` (and optionally `DATABASE_PROVIDER` to the same value).
 4. Recreate migrations for the new engine (do not reuse SQLite SQL as-is):
 
    ```bash
